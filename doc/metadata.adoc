@@ -1,0 +1,38 @@
+
+=== Metadata
+
+[[set_string]]
+* _val_ = *get_string*(_sndfile_, <<stringtype, _stringtype_>>) +
+*set_string*(_sndfile_, <<stringtype, _stringtype_>>, _val_) +
+[small]#_get_string(&nbsp;)_ returns _nil_ if the requested _stringtype_ is not present. +
+Rfr: http://www.mega-nerd.com/libsndfile/api.html#string[sf_get_string, sf_set_string].#
+
+[[get_embed_file_info]]
+* _offset_, _length_ = *get_embed_file_info*(_sndfile_) +
+[small]#Rfr: http://www.mega-nerd.com/libsndfile/command.html#SFC_GET_EMBED_FILE_INFO[SFC_GET_EMBED_FILE_INFO].#
+
+[[set_chunk]]
+* *set_chunk*(_sndfile_, <<chunk, _chunk_>>) +
+{<<chunk, _chunk_>>} = *get_chunks*(_sndfile_, [_id_]) +
+[small]#Rfr: sf_set_chunk, get_chunk_iterator.#
+
+[[set_channel_map_info]]
+* {<<channelmap, _channelmap_>>} = *get_channel_map_info*(_sndfile_) +
+*set_channel_map_info*(_sndfile_, {<<channelmap, _channelmap_>>}) +
+[small]#Rfr: SFC_GET_CHANNEL_MAP_INFO, SFC_SET_CHANNEL_MAP_INFO.#
+
+[[wavex_set_ambisonic]]
+* <<ambisonic, _ambisonic_>> = *wavex_get_ambisonic*(_sndfile_) +
+*wavex_set_ambisonic*(_sndfile_, <<ambisonic, _ambisonic_>>) +
+[small]#Rfr: http://www.mega-nerd.com/libsndfile/command.html#SFC_WAVEX_GET_AMBISONIC[SFC_WAVEX_GET_AMBISONIC], http://www.mega-nerd.com/libsndfile/command.html#SFC_WAVEX_SET_AMBISONIC[SFC_WAVEX_SET_AMBISONIC].#
+
+////
+[[]]
+* **(_sndfile_) +
+[small]#Rfr: http://www.mega-nerd.com/libsndfile/api.html#[sf_].#
+
+[[]]
+* **(_sndfile_) +
+[small]#Rfr: http://www.mega-nerd.com/libsndfile/command.html#SFC_[].#
+
+////

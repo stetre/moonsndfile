@@ -1,0 +1,22 @@
+
+[[objects]]
+== Bindings
+
+////
+MoonSndFile has a single object type, <<sndfile, sndfile>>, which corresponds to 
+the SNDFILE handle of the libsndfile C API.
+
+
+The following tree shows the MoonAL objects and their parent-child relationships.
+
+[small]#<<device, device>> _(ALCdevice)_ +
+{tL}<<context, context>> _(ALCcontext)_ +
+{tS}{tH}<<listener, listener>> _(OpenAL Listener object, singleton)_ +
+{tS}{tH}<<source, source>> _(OpenAL Source object)_ +
+{tS}{tH}<<buffer, buffer>> _(OpenAL Buffer object)_ +
+{tS}{tH}<<effect, effect>> _(EFX extension Effect object)_ +
+{tS}{tH}<<filter, filter>> _(EFX extension Filter object)_ +
+{tS}{tL}<<auxslot, auxslot>> _(EFX extension AuxiliaryEffectSlot object)_#
+
+////
+

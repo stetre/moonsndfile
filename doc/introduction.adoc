@@ -1,0 +1,64 @@
+
+== Introduction
+
+MoonSndFile is an (almost) one-to-one Lua binding library to libsndfile.
+It provides means to implement scripted libsndfile-based applications using Lua instead
+of C or pass:[C++], with all its pros and cons.
+
+This section gives a brief overview, while the details of the bindings are given 
+in the sections that follow.
+
+As a general rule, libsndfile API *functions* are bound to by MoonSndFile functions with
+almost the same names of the original ones, apart from being members of the _sf_ table
+(for example, _sf_open(&nbsp;)_ is bound to by _sf.open(&nbsp;)_).
+
+Libsndfile http://www.mega-nerd.com/libsndfile/command.html[*commands*] are mapped to 
+functions with names that usually are derived from the 
+command name (e.g. _sf_command(SFC_SET_NORM_FLOAT)_ is mapped to the Lua function
+_sf.set_norm_float(&nbsp;)_).
+
+If not stated otherwise, *on error* MoonSndFile functions raise a 
+http://www.lua.org/manual/5.3/manual.html#lua_error[Lua error]. 
+If needed, this behaviour can be overridden by wrapping function calls in the standard Lua 
+http://www.lua.org/manual/5.3/manual.html#pdf-pcall[pcall](&nbsp;).
+
+MoonSndFile binds *_SNDFILE_* objects (the only object type in this library) to Lua userdata,
+which are returned by the opening function (e.g. <<open, _sf.open_>>(&nbsp;))
+and are then used to refer to _sndfile_ objects in Lua in the same way as one would 
+use _SNDFILE_ handles in C.
+
+////
+Occasionally, the actual libsndfile *handles* may be needed by the Lua code, mainly to interoperate
+in very dangerous ways with other libraries that access the libsndfile API directly. 
+Handles can be retrieved with the <<method_raw, raw>>(&nbsp;) method that every object has.
+////
+
+_sndfile_ objects are *garbage collected at exit* (which includes on error), and automatically
+closed at the libsndfile level, so there is no need to explicitly invoke <<close, _sf.close_>>(&nbsp;)
+at exit for cleanup. 
+
+Apart from at exit, however, _sndfile_ objects are not automatically garbage collected 
+footnote:[Objects are anchored to the Lua registry at their creation, so even if the script does not
+have references to an object, a reference always exists on the registry and this prevents the 
+GC to collect it.]
+and one must close and delete them explicitly when needed, e.g. to release resources when the
+application is not exiting and the some _sndfile_ objects are no longer needed.
+
+////
+Releasing an object causes the automatic (pre) destruction of all its children
+objects, and the invalidation of any reference to the object and to its children.
+footnote:[It is good practice to not leave invalid references to objects around, because
+they prevent the GC to collect the memory associated with the userdata.]
+////
+
+Libsndfile *structs* (and lists, and arrays) used to pass parameters and results across the 
+libsndfile API are mapped in MoonSndFile to tables, having more or less the same contents as
+their C counterparts, while  
+*enumerations* are mapped to/from sets of string literals.
+More details are given in the respective sections of this document 
+(<<structs, structs>>, <<enums, enums>>).
+
+In addition to the bindings to the libsndfile API, which are described in the sections that follow, 
+MoonSndFile also provides a few other utilities.
+These are described mainly in the <<miscellanea, 'Miscellanea'>> subsections.
+

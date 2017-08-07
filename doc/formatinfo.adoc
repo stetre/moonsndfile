@@ -1,0 +1,28 @@
+
+=== Format info
+
+[[format_check]]
+* _boolean_ = *format_check*(<<format, _format_>>, <<subformat, _subformat_>>) +
+[small]#Rfr: http://www.mega-nerd.com/libsndfile/api.html#sf_format_check[sf_format_check].#
+
+[[get_simple_format_list]]
+* {<<simpleformat, _simpleformat_>>} = *get_simple_format_list*( ) +
+[small]#Rfr: http://www.mega-nerd.com/libsndfile/command.html#SFC_GET_SIMPLE_FORMAT[SFC_GET_SIMPLE_FORMAT].#
+
+[[get_format_info]]
+* <<formatinfo, _formatinfo_>> = *get_format_info*(<<format, _format_>>) +
+<<subformatinfo, _subformatinfo_>> = *get_subformat_info*(<<subformat, _subformat_>>) +
+{<<formatinfo, _formatinfo_>>} = *get_format_list*( ) +
+[small]#Rfr: http://www.mega-nerd.com/libsndfile/command.html#SFC_GET_FORMAT_INFO[SFC_GET_FORMAT_INFO].#
+
+NOTE: In libsndfile, the SF_FORMAT_INFO struct is used to convey information about formats
+as well as subformats and simple formats. In MoonSndFile, instead, three different structs are used:
+<<formatinfo, formatinfo>>, <<subformatinfo, subformatinfo>>, and <<simpleformat, simpleformat>>, respectively. +
+ +
+All three structs contain an integer _code_ field, which is the format code as defined in _sndfile.h_
+(in particular, the _code_ of a <<simpleformat, simpleformat>> encodes major format, subformat,
+and endianness and thus can be used in the _fileinfo.code_ field when <<open, opening a file>>). +
+ +
+The <<formatinfo, formatinfo>> struct is enhanced with the _subformats_ field which
+is a list of all the subformats supported by the format it refers to.
+

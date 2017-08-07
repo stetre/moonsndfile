@@ -1,0 +1,31 @@
+
+=== Signal info
+
+[[get_signal_max]]
+* _value_ = *get_signal_max*(_sndfile_) +
+{_value_} = *get_max_all_channels*(_sndfile_) +
+[small]#Rfr: http://www.mega-nerd.com/libsndfile/command.html#SFC_GET_SIGNAL_MAX[SFC_GET_SIGNAL_MAX],
+http://www.mega-nerd.com/libsndfile/command.html#SFC_GET_MAX_ALL_CHANNELS[SFC_GET_MAX_ALL_CHANNELS].#
+
+[[calc_signal_max]]
+* _value_ = *calc_signal_max*(_sndfile_) +
+{_value_} = *calc_max_all_channels*(_sndfile_) +
+[small]#Rfr: http://www.mega-nerd.com/libsndfile/command.html#SFC_CALC_SIGNAL_MAX[SFC_CALC_SIGNAL_MAX],
+http://www.mega-nerd.com/libsndfile/command.html#SFC_CALC_MAX_ALL_CHANNELS[SFC_CALC_MAX_ALL_CHANNELS].#
+
+[[calc_norm_signal_max]]
+* _value_ = *calc_norm_signal_max*(_sndfile_) +
+{_value_} = *calc_norm_max_all_channels*(_sndfile_) +
+[small]#Rfr: http://www.mega-nerd.com/libsndfile/command.html#SFC_CALC_NORM_SIGNAL_MAX[SFC_CALC_NORM_SIGNAL_MAX],
+http://www.mega-nerd.com/libsndfile/command.html#SFC_CALC_NORM_MAX_ALL_CHANNELS[SFC_CALC_NORM_MAX_ALL_CHANNELS].#
+
+////
+[[]]
+* **(_sndfile_) +
+[small]#Rfr: http://www.mega-nerd.com/libsndfile/api.html#[sf_].#
+
+[[]]
+* **(_sndfile_) +
+[small]#Rfr: http://www.mega-nerd.com/libsndfile/command.html#SFC_[].#
+
+////

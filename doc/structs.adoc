@@ -1,0 +1,46 @@
+
+[[Structs]]
+== Structs
+
+[[fileinfo]]
+[small]#*fileinfo* = { +
+_code_: integer, +
+_format_: <<format, format>>, +
+_subformat_: <<subformat, subformat>>, +
+_endianness_: <<endianness, endianness>>, +
+_samplerate_: integer, +
+_channels_: integer, +
+_frames_: integer, +
+_sections_: integer, +
+_seekable_: boolean, +
+} (Rfr: http://www.mega-nerd.com/libsndfile/api.html#open[SF_INFO]).#
+
+[[formatinfo]]
+[small]#*formatinfo* = { +
+_format_: <<format, format>>, +
+_code_: integer, +
+_name_: string, +
+_extension_: string, +
+_subformats_: {<<subformatinfo, _subformatinfo_>>}, +
+} (Rfr: http://www.mega-nerd.com/libsndfile/command.html#SFC_GET_SIMPLE_FORMAT[SF_FORMAT_INFO]).#
+
+[[subformatinfo]]
+[small]#*subformatinfo* = { +
+_subformat_: <<subformat, _subformat_>>, +
+_code_: integer, +
+_name_: string, +
+} (Rfr: http://www.mega-nerd.com/libsndfile/command.html#SFC_GET_SIMPLE_FORMAT[SF_FORMAT_INFO]).#
+
+[[simpleformat]]
+[small]#*simpleformat* = { +
+_code_: integer, +
+_name_: string, +
+_extension_: string, +
+} (Rfr: http://www.mega-nerd.com/libsndfile/command.html#SFC_GET_SIMPLE_FORMAT[SF_FORMAT_INFO]).#
+
+[[chunk]]
+[small]#*chunk* = { +
+_id_: binary string (length <=64), +
+_data_: binary string, +
+} (Rfr: SF_CHUNK_INFO).#
+
