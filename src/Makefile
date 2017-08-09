@@ -34,6 +34,7 @@ ifdef LINUX
 endif
 ifdef MINGW
 #LIBS = -lsndfile
+LIBS = -llua
 endif
 
 Tgt	:= moonsndfile

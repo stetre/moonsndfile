@@ -70,23 +70,18 @@ struct chunknode_s {
 #endif
 
 /* utils.c */
+void moonsndfile_utils_init(lua_State *L);
 #define noprintf moonsndfile_noprintf
 int noprintf(const char *fmt, ...); 
 #define now moonsndfile_now
 double now(void);
 #define since(t) (now() - (t))
-#define tstosec moonsndfile_tstosec
-double tstosec(const struct timespec *ts);
-#define sectots moonsndfile_sectots
-void sectots(struct timespec *ts, double seconds);
 #define sleeep moonsndfile_sleeep
 void sleeep(double seconds);
 #define notavailable moonsndfile_notavailable
 int notavailable(lua_State *L, ...);
 #define tablelen moonsndfile_tablelen
 int tablelen(lua_State *L, int arg);
-#define malloc_init moonsndfile_malloc_init
-void malloc_init(lua_State *L);
 #define Malloc moonsndfile_Malloc
 void *Malloc(lua_State *L, size_t size);
 #define MallocNoErr moonsndfile_MallocNoErr
@@ -193,6 +188,7 @@ void freechunks(lua_State *L, chunknode_t *p);
 int luaopen_moonsndfile(lua_State *L);
 void moonsndfile_open_version(lua_State *L);
 int moonsndfile_open_getproc(lua_State *L);
+void moonsndfile_atexit_getproc(void);
 void moonsndfile_open_enums(lua_State *L);
 void moonsndfile_open_tracing(lua_State *L);
 void moonsndfile_open_readwrite(lua_State *L);

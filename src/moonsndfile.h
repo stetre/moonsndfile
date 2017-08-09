@@ -34,6 +34,7 @@
 #include "lualib.h"
 #include "lauxlib.h"
 
+#include <stdint.h>
 #include "include/sndfile.h"
 
 #define MOONSNDFILE_VERSION      "0.1"

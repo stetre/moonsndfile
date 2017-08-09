@@ -51,8 +51,23 @@ int tablelen(lua_State *L, int arg)
 
 
 /*------------------------------------------------------------------------------*
- | Time utilities (POSIX)                                                       |
+ | Time utilities                                                               |
  *------------------------------------------------------------------------------*/
+
+#if defined(LINUX)
+
+#if 0
+static double tstosec(const struct timespec *ts)
+    {
+    return ts->tv_sec*1.0+ts->tv_nsec*1.0e-9;
+    }
+#endif
+
+static void sectots(struct timespec *ts, double seconds)
+    {
+    ts->tv_sec=(time_t)seconds;
+    ts->tv_nsec=(long)((seconds-((double)ts->tv_sec))*1.0e9);
+    }
 
 double now(void)
     {
@@ -67,17 +82,6 @@ double now(void)
         { printf("gettimeofday error\n"); return -1; }
     return tv.tv_sec + tv.tv_usec*1.0e-6;
 #endif
-    }
-
-double tstosec(const struct timespec *ts)
-    {
-    return ts->tv_sec*1.0+ts->tv_nsec*1.0e-9;
-    }
-
-void sectots(struct timespec *ts, double seconds)
-    {
-    ts->tv_sec=(time_t)seconds;
-    ts->tv_nsec=(long)((seconds-((double)ts->tv_sec))*1.0e9);
     }
 
 void sleeep(double seconds)
@@ -101,6 +105,34 @@ void sleeep(double seconds)
 #endif
     }
 
+#define time_init(L) do { /* do nothing */ } while(0)
+
+#elif defined(MINGW)
+
+#include <windows.h>
+
+static LARGE_INTEGER Frequency;
+double now(void)
+    {
+    LARGE_INTEGER ts;
+    QueryPerformanceCounter(&ts);
+    return ((double)(ts.QuadPart))/Frequency.QuadPart;
+    }
+
+void sleeep(double seconds)
+    {
+    DWORD msec = (DWORD)seconds * 1000;
+    //if(msec < 0) return;  DWORD seems to be unsigned
+    Sleep(msec);
+    }
+
+static void time_init(lua_State *L)
+    {
+    (void)L;
+    QueryPerformanceFrequency(&Frequency);
+    }
+
+#endif
 
 /*------------------------------------------------------------------------------*
  | Malloc                                                                       |
@@ -117,7 +149,7 @@ void sleeep(double seconds)
 static lua_Alloc Alloc = NULL;
 static void* AllocUd = NULL;
 
-void malloc_init(lua_State *L)
+static void malloc_init(lua_State *L)
     {
     if(Alloc) unexpected(L);
     Alloc = lua_getallocf(L, &AllocUd);
@@ -318,5 +350,15 @@ int nil_sndfileerror(lua_State *L, sndfile_t sndfile)
     lua_pushnil(L);
     lua_pushstring(L, str ? str : "unknown error");
     return 2;
+    }
+
+/*------------------------------------------------------------------------------*
+ | Inits                                                                        |
+ *------------------------------------------------------------------------------*/
+
+void moonsndfile_utils_init(lua_State *L)
+    {
+    malloc_init(L);
+    time_init(L);
     }
 

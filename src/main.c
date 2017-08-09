@@ -32,6 +32,7 @@ static void AtExit(void)
     if(moonsndfile_L)
         {
         enums_free_all(moonsndfile_L);
+        moonsndfile_atexit_getproc();
         moonsndfile_L = NULL;
         }
     }
@@ -41,7 +42,7 @@ int luaopen_moonsndfile(lua_State *L)
     {
     moonsndfile_L = L;
 
-    malloc_init(L);
+    moonsndfile_utils_init(L);
     atexit(AtExit);
 
     lua_newtable(L); /* the cl table */

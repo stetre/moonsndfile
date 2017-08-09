@@ -42,7 +42,6 @@
 /* Dispatch tables */
 
 /* Global functions */
-#define sf_dt_t moonsndfile_sf_dt_t
 typedef struct {
     PFN_sf_open open;
     PFN_sf_open_fd open_fd;
@@ -87,10 +86,10 @@ typedef struct {
     PFN_sf_next_chunk_iterator next_chunk_iterator;
     PFN_sf_get_chunk_size get_chunk_size;
     PFN_sf_get_chunk_data get_chunk_data;
-} sf_dt_t;
+} moonsndfile_sf_dt_t;
 
 #define sf moonsndfile_sf
-extern sf_dt_t sf;
+extern moonsndfile_sf_dt_t sf;
 
 #endif /* getprocDEFINED */
 

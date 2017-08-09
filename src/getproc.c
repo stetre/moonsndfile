@@ -25,39 +25,59 @@
 
 #include "internal.h"
 
-sf_dt_t sf;   /* sndfile.h dispatch table */
+moonsndfile_sf_dt_t sf;   /* sndfile.h dispatch table */
 
 #define FP(f) *(void**)(&(f))
 /* Cast to silent compiler warnings without giving up the -Wpedantic flag.
  *("ISO C forbids conversion of function pointer to object pointer type")
  */
 
-#ifdef LINUX
-/*----------------------------------------------------------------------------------*
- | Linux                                                                            |
- *----------------------------------------------------------------------------------*/
-
-#define LIBNAME "libsndfile.so"
-
+#if defined(LINUX)
 #include <dlfcn.h>
+#define LIBNAME "libsndfile.so"
+static void *Handle = NULL;
+
+#elif defined(MINGW)
+#include <windows.h>
+#define LIBNAME "sndfile.dll"
+#define LLIBNAME L"sndfile.dll"
+static HMODULE Handle = NULL;
+
+#else
+#error "Cannot determine platform"
+#endif
+
 static int Init(lua_State *L)
     {
+#if defined(LINUX)
     char *err;
-    void *handle = dlopen(LIBNAME, RTLD_LAZY | RTLD_LOCAL);
-    if(!handle)
+    Handle = dlopen(LIBNAME, RTLD_LAZY | RTLD_LOCAL);
+    if(!Handle)
         {
         err = dlerror();
         return luaL_error(L, err != NULL ? err : "cannot load "LIBNAME);
         }
+#define GET(fn) do {                                             \
+    FP(sf.fn) = dlsym(Handle, "sf_"#fn);                         \
+    if(!sf.fn) return luaL_error(L, "cannot find sf_"#fn);       \
+} while(0)
+#define OPT(fn) do {    /* optional */                           \
+    FP(sf.fn) = dlsym(Handle, "sf_"#fn);                         \
+} while(0)
 
-    /* Fill the global dispatch table */
-#define GET(fn) do {                                            \
-    FP(sf.fn) = dlsym(handle, "sf_"#fn);                        \
-    if(!sf.fn) return luaL_error(L, "cannot find sf_"#fn);      \
+#elif defined(MINGW)
+    Handle = LoadLibraryW(LLIBNAME);
+    if(!Handle)
+        return luaL_error(L, "cannot load "LIBNAME);
+#define GET(fn) do {                                              \
+    sf.fn = (PFN_sf_##fn)GetProcAddress(Handle, "sf_"#fn);        \
+    if(!sf.fn) return luaL_error(L, "cannot find sf_"#fn);        \
 } while(0)
-#define OPT(fn) do {    /* optional */                          \
-    FP(sf.fn) = dlsym(handle, "sf_"#fn);                        \
+#define OPT(fn) do {    /* optional */                            \
+    sf.fn = (PFN_sf_##fn)GetProcAddress(Handle, "sf_"#fn);        \
 } while(0)
+#endif
+
     /* If MoonSndFile loads successfully, these function pointers are guaranteed
      * to be valid so they need not be checked before using them.
      */
@@ -112,19 +132,16 @@ static int Init(lua_State *L)
     return 0;
     }
 
-#else
-/*----------------------------------------------------------------------------------*
- | @@ Other platforms (MINGW, WIN32, ecc) 
- *----------------------------------------------------------------------------------*/
-static int Init(lua_State *L)
-    {
-    return luaL_error(L, "platform not supported");
-    return 0;
-    }
-
-#endif
-
 /*---------------------------------------------------------------------------*/
+
+void moonsndfile_atexit_getproc(void)
+    {
+#if defined(LINUX)
+    if(Handle) dlclose(Handle);
+#elif defined(MINGW)
+    if(Handle) FreeLibrary(Handle);
+#endif
+    }
 
 int moonsndfile_open_getproc(lua_State *L)
     {
