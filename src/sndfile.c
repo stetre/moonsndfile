@@ -165,6 +165,60 @@ static int GetFileinfo(lua_State *L)
     return 1;
     }
 
+static int GetFormat(lua_State *L)
+    {
+    ud_t *ud;
+    sndfile_t sndfile = checksndfile(L, 1, &ud);
+    update_sfinfo(L, sndfile, ud);
+    pushformat(L, ud->sfinfo.format & SF_FORMAT_TYPEMASK);
+    return 1;
+    }
+
+static int GetSubformat(lua_State *L)
+    {
+    ud_t *ud;
+    sndfile_t sndfile = checksndfile(L, 1, &ud);
+    update_sfinfo(L, sndfile, ud);
+    pushsubformat(L, ud->sfinfo.format & SF_FORMAT_SUBMASK);
+    return 1;
+    }
+
+static int GetEndianness(lua_State *L)
+    {
+    ud_t *ud;
+    sndfile_t sndfile = checksndfile(L, 1, &ud);
+    update_sfinfo(L, sndfile, ud);
+    pushendianness(L, ud->sfinfo.format & SF_FORMAT_ENDMASK);
+    return 1;
+    }
+
+#define GETINT_FUNC(Func, what)         \
+static int Func(lua_State *L)           \
+    {                                   \
+    ud_t *ud;                           \
+    sndfile_t sndfile = checksndfile(L, 1, &ud);    \
+    update_sfinfo(L, sndfile, ud);                  \
+    lua_pushinteger(L, ud->sfinfo.what);            \
+    return 1;                                       \
+    }
+
+GETINT_FUNC(GetCode, format)
+GETINT_FUNC(GetFrames, frames)
+GETINT_FUNC(GetSamplerate, samplerate)
+GETINT_FUNC(GetChannels, channels)
+GETINT_FUNC(GetSections, sections)
+#undef GETINT_FUNC
+
+static int GetSeekable(lua_State *L)
+    {
+    ud_t *ud;
+    sndfile_t sndfile = checksndfile(L, 1, &ud);
+    update_sfinfo(L, sndfile, ud);
+    lua_pushboolean(L, ud->sfinfo.seekable);
+    return 1;
+    }
+
+
 static int GetEmbedFileInfo (lua_State *L)
     {
     SF_EMBED_FILE_INFO info;
@@ -189,6 +243,15 @@ static const struct luaL_Reg Methods[] =
         { "delete", Delete },
         { "close", Delete },
         { "fileinfo", GetFileinfo },
+        { "format", GetFormat },
+        { "subformat", GetSubformat },
+        { "endianness", GetEndianness },
+        { "code", GetCode },
+        { "frames", GetFrames },
+        { "samplerate", GetSamplerate },
+        { "channels", GetChannels },
+        { "sections", GetSections },
+        { "seekable", GetSeekable },
         { NULL, NULL } /* sentinel */
     };
 

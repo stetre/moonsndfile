@@ -36,6 +36,18 @@ retrieved at any time with the following function:
 * <<fileinfo, _fileinfo_>> = *get_fileinfo*(_sndfile_) +
 [small]#Rfr: http://www.mega-nerd.com/libsndfile/command.html#SFC_GET_CURRENT_SF_INFO[SFC_GET_CURRENT_SF_INFO].#
 
+Alternatively, the individual <<fileinfo, _fileinfo_>> attributes can be retrieved with the following methods of the _sndfile_ object:
+
+* <<format, _format_>> = _sndfile_++++*:format*( )
+* <<subformat, _subformat_>> = _sndfile_++++*:subformat*( )
+* <<endianness, _endianness_>> = _sndfile_++++*:endianness*( )
+* _integer_ = _sndfile_++++*:code*( )
+* _integer_ = _sndfile_++++*:samplerate*( )
+* _integer_ = _sndfile_++++*:channels*( )
+* _integer_ = _sndfile_++++*:frames*( )
+* _integer_ = _sndfile_++++*:sections*( )
+* _boolean_ = _sndfile_++++*:seekable*( )
+
 
 ////
 [[]]
