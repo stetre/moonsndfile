@@ -2,7 +2,7 @@
 
 MoonSndFile is a Lua binding library for Erik de Castro Lopo's [libsndfile](http://www.mega-nerd.com/libsndfile/).
 
-It runs on GNU/Linux <!-- and on Windows (MSYS2/MinGW) --> and requires 
+It runs on GNU/Linux and on Windows (MSYS2/MinGW) and requires
 [Lua](http://www.lua.org/) (>=5.3) and [libsndfile](http://www.mega-nerd.com/libsndfile/#Download) (>= 1.0.25).
 
 

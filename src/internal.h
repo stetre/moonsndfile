@@ -203,12 +203,12 @@ void moonsndfile_open_chunk(lua_State *L);
  | Debug and other utilities                                                    |
  *------------------------------------------------------------------------------*/
 
-#define TRACE_CREATE(p, ttt) do {                                   \
-    if(trace_objects) { printf("create "ttt" 0x%.16llx\n", (long long unsigned int)(uintptr_t)(p)); }   \
+#define TRACE_CREATE(p, ttt) do {                                               \
+    if(trace_objects) { printf("create "ttt" %p\n", (void*)(uintptr_t)(p)); }   \
 } while(0)
 
-#define TRACE_DELETE(p, ttt) do {                                   \
-    if(trace_objects) { printf("delete "ttt" 0x%.16llx\n", (long long unsigned int)(uintptr_t)(p)); }   \
+#define TRACE_DELETE(p, ttt) do {                                               \
+    if(trace_objects) { printf("delete "ttt" %p\n", (void*)(uintptr_t)(p)); }   \
 } while(0)
 
 /* If this is printed, it denotes a suspect bug: */

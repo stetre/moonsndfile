@@ -39,8 +39,10 @@ static void *Handle = NULL;
 
 #elif defined(MINGW)
 #include <windows.h>
-#define LIBNAME "sndfile.dll"
-#define LLIBNAME L"sndfile.dll"
+#define LIBNAME "libsndfile-1.dll"
+#define LLIBNAME L"libsndfile-1.dll"
+#define LIBNAME1 "sndfile.dll"
+#define LLIBNAME1 L"sndfile.dll"
 static HMODULE Handle = NULL;
 
 #else
@@ -68,7 +70,9 @@ static int Init(lua_State *L)
 #elif defined(MINGW)
     Handle = LoadLibraryW(LLIBNAME);
     if(!Handle)
-        return luaL_error(L, "cannot load "LIBNAME);
+        Handle = LoadLibraryW(LLIBNAME1);
+    if(!Handle)
+        return luaL_error(L, "cannot load " LIBNAME " or " LIBNAME1);
 #define GET(fn) do {                                              \
     sf.fn = (PFN_sf_##fn)GetProcAddress(Handle, "sf_"#fn);        \
     if(!sf.fn) return luaL_error(L, "cannot find sf_"#fn);        \

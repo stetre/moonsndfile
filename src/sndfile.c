@@ -59,7 +59,7 @@ static int Open(lua_State *L, int openfd)
     FILE* fp;
     int mode, fd = -1, close_desc = 1;
 
-    if(openfd)
+    if(openfd) //@@FIXME: doesn't work under MINGW
         {
         if(luaL_testudata(L, 1, "FILE*"))
             {

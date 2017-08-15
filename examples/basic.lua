@@ -89,6 +89,7 @@ print("max roundtrip conversion error = "..maxerr) -- is it small enough?
 
 sf.close(f)
 
+--[[ @@ Currently works only under GNU/Linux
 -------------------------------------------------------------------------------
 -- 3) Loading a sound file from an already open file (sf.open_fd())
 -------------------------------------------------------------------------------
@@ -102,4 +103,5 @@ fh = io.open(FILENAME, "r")
 f, fileinfo = sf.open_fd(fh, "r", nil, true)
 printinfo(fileinfo)
 sf.close(f)
+--]]
 
