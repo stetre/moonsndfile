@@ -29,14 +29,6 @@ ifeq ($(D),1)
 DEBUG=1
 endif
 
-ifdef LINUX
-#LIBS = -lsndfile
-endif
-ifdef MINGW
-#LIBS = -lsndfile
-LIBS = -llua
-endif
-
 Tgt	:= moonsndfile
 Src := $(wildcard *.c)
 Objs := $(Src:.c=.o)
@@ -51,9 +43,13 @@ COPT 	+= -DLUAVER=$(LUAVER)
 ifdef LINUX
 COPT    += -fpic
 COPT	+= -DLINUX
+INCDIR = -I/usr/include/lua$(LUAVER)
+#LIBS = -lsndfile
 endif
 ifdef MINGW
 COPT	+= -DMINGW
+#LIBS = -lsndfile
+LIBS = -llua
 endif
 ifdef DEBUG
 COPT	+= -DDEBUG
