@@ -56,29 +56,15 @@ static int Open(lua_State *L, int openfd)
     SF_INFO info;
     sndfile_t sndfile;
     const char *path;
-    FILE* fp;
+    luaL_Stream *s;
     int mode, fd = -1, close_desc = 1;
 
-    if(openfd) //@@FIXME: doesn't work under MINGW
+    if(openfd) //@@FIXME: does this work under MINGW?
         {
-        if(luaL_testudata(L, 1, "FILE*"))
+        s = (luaL_Stream*)luaL_testudata(L, 1, LUA_FILEHANDLE);
+        if(s)
             {
-            /* Hack to extract the file pointer from a Lua file handle.
-             *
-             * Call the __tostring metamethod of the userdata.
-             * If the userdata is a untainted Lua file handle, this should
-             * push the string "file (0xXXXXX)" on top of the stack, where
-             * 0xXXXXX is the FILE* we are looking for.
-             */
-            if(luaL_callmeta(L, 1, "__tostring") == 0)
-                return luaL_argerror(L, 1, errstring(ERR_TYPE));
-            path = lua_tostring(L, -1); 
-            if(!path)
-                return luaL_argerror(L, 1, errstring(ERR_TYPE));
-            if(sscanf(path, "file (0x%p)", (void**)&fp) != 1)
-                return luaL_argerror(L, 1, errstring(ERR_TYPE));
-            lua_pop(L, 1);
-            fd = fileno(fp); /* POSIX */
+            fd = fileno(s->f); /* POSIX */
             if(fd == -1)
                 return luaL_argerror(L, 1, errstring(ERR_TYPE));
             }
