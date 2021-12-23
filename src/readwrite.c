@@ -198,6 +198,27 @@ static int SetCompressionLevel(lua_State *L)
 static int SetAddPeakChunk(lua_State *L)
     { return command_set_boolean(L, SFC_SET_ADD_PEAK_CHUNK); }
 
+static int SetOggPageLatencyMs(lua_State *L)
+    { return command_set_double(L, SFC_SET_OGG_PAGE_LATENCY_MS); }
+
+static int SetBitrateMode(lua_State *L)
+    {
+    sndfile_t sndfile = checksndfile(L, 1, NULL);
+    int val = checkbitratemode(L, 2);
+    sf.command(sndfile, SFC_SET_BITRATE_MODE, NULL, val);
+    return 0;
+    }
+
+static int GetBitrateMode(lua_State *L)
+    {
+    sndfile_t sndfile = checksndfile(L, 1, NULL);
+    int val = sf.command(sndfile, SFC_GET_BITRATE_MODE, NULL, 0);
+    pushbitratemode(L, val);
+    return 1;
+    }
+
+
+
 /* ------------------------------------------------------------------------ */
 
 #if 0 //(defined (ENABLE_SNDFILE_WINDOWS_PROTOTYPES) && ENABLE_SNDFILE_WINDOWS_PROTOTYPES)
@@ -236,6 +257,9 @@ static const struct luaL_Reg Functions[] =
         { "set_vbr_encoding_quality", SetVbrEncodingQuality },
         { "set_compression_level", SetCompressionLevel },
         { "set_add_peak_chunk", SetAddPeakChunk },
+        { "set_ogg_page_latency_ms", SetOggPageLatencyMs },
+        { "set_bitrate_mode", SetBitrateMode },
+        { "get_bitrate_mode", GetBitrateMode },
         { NULL, NULL } /* sentinel */
     };
 

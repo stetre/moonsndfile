@@ -11,5 +11,5 @@ To retrieve the version of the *libsndfile* runtime (_libsndfile.so_) use the fo
 [[version_string]]
 * _version_ = *version_string*( ) +
 _major_, _minor_, _patch_ = *version_number*( ) +
-[small]#Rfr: http://www.mega-nerd.com/libsndfile/api.html#sf_version_string[sf_version_string].#
+[small]#Rfr: https://libsndfile.github.io/libsndfile/api.html#sf_version_string[sf_version_string].#
 

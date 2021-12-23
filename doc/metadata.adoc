@@ -5,11 +5,11 @@
 * _val_ = *get_string*(_sndfile_, <<stringtype, _stringtype_>>) +
 *set_string*(_sndfile_, <<stringtype, _stringtype_>>, _val_) +
 [small]#_get_string(&nbsp;)_ returns _nil_ if the requested _stringtype_ is not present. +
-Rfr: http://www.mega-nerd.com/libsndfile/api.html#string[sf_get_string, sf_set_string].#
+Rfr: https://libsndfile.github.io/libsndfile/api.html#string[sf_get_string, sf_set_string].#
 
 [[get_embed_file_info]]
 * _offset_, _length_ = *get_embed_file_info*(_sndfile_) +
-[small]#Rfr: http://www.mega-nerd.com/libsndfile/command.html#SFC_GET_EMBED_FILE_INFO[SFC_GET_EMBED_FILE_INFO].#
+[small]#Rfr: https://libsndfile.github.io/libsndfile/command.html#sfc_get_embed_file_info[SFC_GET_EMBED_FILE_INFO].#
 
 [[set_chunk]]
 * *set_chunk*(_sndfile_, <<chunk, _chunk_>>) +
@@ -24,15 +24,21 @@ Rfr: http://www.mega-nerd.com/libsndfile/api.html#string[sf_get_string, sf_set_s
 [[wavex_set_ambisonic]]
 * <<ambisonic, _ambisonic_>> = *wavex_get_ambisonic*(_sndfile_) +
 *wavex_set_ambisonic*(_sndfile_, <<ambisonic, _ambisonic_>>) +
-[small]#Rfr: http://www.mega-nerd.com/libsndfile/command.html#SFC_WAVEX_GET_AMBISONIC[SFC_WAVEX_GET_AMBISONIC], http://www.mega-nerd.com/libsndfile/command.html#SFC_WAVEX_SET_AMBISONIC[SFC_WAVEX_SET_AMBISONIC].#
+[small]#Rfr: https://libsndfile.github.io/libsndfile/command.html#sfc_wavex_get_ambisonic[SFC_WAVEX_GET_AMBISONIC], https://libsndfile.github.io/libsndfile/command.html#sfc_wavex_set_ambisonic[SFC_WAVEX_SET_AMBISONIC].#
+
+[[set_original_samplerate]]
+* *set_original_samplerate*(_sndfile_, _value_) +
+_value_ = *get_original_samplerate*(_sndfile_) +
+[small]#Rfr: https://libsndfile.github.io/libsndfile/command.html#sfc_set_original_samplerate[SFC_SET_ORIGINAL_SAMPLERATE], https://libsndfile.github.io/libsndfile/command.html#sfc_get_original_samplerate[SFC_GET_ORIGINAL_SAMPLERATE].#
+
 
 ////
 [[]]
 * **(_sndfile_) +
-[small]#Rfr: http://www.mega-nerd.com/libsndfile/api.html#[sf_].#
+[small]#Rfr: https://libsndfile.github.io/libsndfile/api.html#[sf_].#
 
 [[]]
-* **(_sndfile_) +
-[small]#Rfr: http://www.mega-nerd.com/libsndfile/command.html#SFC_[].#
+* **(_SNDfile_) +
+[small]#Rfr: https://libsndfile.github.io/libsndfile/command.html#sfc_[].#
 
 ////

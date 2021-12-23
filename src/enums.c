@@ -285,6 +285,7 @@ static int Enum(lua_State *L)
     CASE(dithertype);
     CASE(loopmode);
     CASE(ambisonic);
+    CASE(bitratemode);
 #undef CASE
     return 0;
     }
@@ -347,6 +348,7 @@ void moonsndfile_open_enums(lua_State *L)
     ADD(FORMAT_OGG, "ogg");
     ADD(FORMAT_MPC2K, "mpc2k");
     ADD(FORMAT_RF64, "rf64");
+    ADD(FORMAT_MPEG, "mpeg");
 
     domain = DOMAIN_SUBFORMAT;
     ADD(FORMAT_PCM_S8, "pcm s8");
@@ -376,6 +378,13 @@ void moonsndfile_open_enums(lua_State *L)
     ADD(FORMAT_ALAC_20, "alac 20");
     ADD(FORMAT_ALAC_24, "alac 24");
     ADD(FORMAT_ALAC_32, "alac 32");
+    ADD(FORMAT_NMS_ADPCM_16, "nms adpcm 16");
+    ADD(FORMAT_NMS_ADPCM_24, "nms adpcm 24");
+    ADD(FORMAT_NMS_ADPCM_32, "nms adpcm 32");
+    ADD(FORMAT_OPUS, "opus");
+    ADD(FORMAT_MPEG_LAYER_I, "mpeg layer i");
+    ADD(FORMAT_MPEG_LAYER_II, "mpeg layer ii");
+    ADD(FORMAT_MPEG_LAYER_III, "mpeg layer iii");
 
     domain = DOMAIN_ENDIANNESS;
     ADD(ENDIAN_FILE, "file");
@@ -449,7 +458,6 @@ void moonsndfile_open_enums(lua_State *L)
     ADD(CHANNEL_MAP_AMBISONIC_B_Y, "ambisonic b y");
     ADD(CHANNEL_MAP_AMBISONIC_B_Z, "ambisonic b z");
 
-
     domain = DOMAIN_DITHER_LEVEL;
     ADDX(SFD_DEFAULT_LEVEL, "default");
     ADDX(SFD_CUSTOM_LEVEL, "custom");
@@ -469,7 +477,10 @@ void moonsndfile_open_enums(lua_State *L)
     ADD(AMBISONIC_NONE, "none");
     ADD(AMBISONIC_B_FORMAT, "b format");
 
-
+    domain = DOMAIN_BITRATE_MODE;
+    ADD(BITRATE_MODE_CONSTANT, "constant");
+    ADD(BITRATE_MODE_AVERAGE, "average");
+    ADD(BITRATE_MODE_VARIABLE, "variable");
 
 #if 0 /* scaffolding */
 4yy

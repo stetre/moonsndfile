@@ -825,7 +825,7 @@ p.tableblock.header { color: #6d6e71; }
 <div class="paragraph">
 <p>This is the reference manual of <strong>MoonSndFile</strong>, which is a
 <a href="http://www.lua.org"><strong>Lua</strong></a> binding library for
-Erik de Castro Lopo&#8217;s <a href="http://www.mega-nerd.com/libsndfile/"><strong>libsndfile</strong></a>.
+Erik de Castro Lopo&#8217;s <a href="https://libsndfile.github.io/libsndfile/"><strong>libsndfile</strong></a>.
 <sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnote_1" title="View footnote.">1</a>]</sup></p>
 </div>
 <div class="paragraph">
@@ -834,7 +834,7 @@ Erik de Castro Lopo&#8217;s <a href="http://www.mega-nerd.com/libsndfile/"><stro
 <div class="paragraph">
 <p>For convenience of reference, this document contains external (deep) links to the
 <a href="http://www.lua.org/manual/5.3/manual.html">Lua Reference Manual</a> and to the
-<a href="http://www.mega-nerd.com/libsndfile/api.html">libsndfile API documentation</a>.</p>
+<a href="https://libsndfile.github.io/libsndfile/api.html">libsndfile API documentation</a>.</p>
 </div>
 <div class="sect2">
 <h3 id="_getting_and_installing">Getting and installing</h3>
@@ -905,7 +905,7 @@ almost the same names of the original ones, apart from being members of the <em>
 (for example, <em>sf_open(&nbsp;)</em> is bound to by <em>sf.open(&nbsp;)</em>).</p>
 </div>
 <div class="paragraph">
-<p>Libsndfile <a href="http://www.mega-nerd.com/libsndfile/command.html"><strong>commands</strong></a> are mapped to
+<p>Libsndfile <a href="https://libsndfile.github.io/libsndfile/command.html"><strong>commands</strong></a> are mapped to
 functions with names that usually are derived from the
 command name (e.g. <em>sf_command(SFC_SET_NORM_FLOAT)</em> is mapped to the Lua function
 <em>sf.set_norm_float(&nbsp;)</em>).</p>
@@ -969,7 +969,7 @@ In the first case, the fields listed in the second case are not needed, but if p
 match the values encoded in the <em>code</em> field.<br>
 In both cases, all other fields apart from <em>fileinfo.samplerate</em> and <em>fileinfo.channels</em> are ignored.<br>
 The <em>fileinfo</em> argument must not be passed when opening a non-raw file in 'r' or 'rw' mode.<br>
-Rfr: <a href="http://www.mega-nerd.com/libsndfile/api.html#open">sf_open</a>.</span></p>
+Rfr: <a href="https://libsndfile.github.io/libsndfile/api.html#open">sf_open</a>.</span></p>
 </li>
 </ul>
 </div>
@@ -981,7 +981,7 @@ Rfr: <a href="http://www.mega-nerd.com/libsndfile/api.html#open">sf_open</a>.</s
 The file can be specified either by passing a valid integer file descriptor (<em>fd</em>), or by passing a valid
 <a href="http://www.lua.org/manual/5.3/manual.html#pdf-io.open">Lua file handle</a> (<em>fh</em>).<br>
 The optional <em>closedesc</em> parameter (close the file descriptor) deafults to <em>false</em>.<br>
-Rfr: <a href="http://www.mega-nerd.com/libsndfile/api.html#open_fd">sf_open_fd</a>.</span></p>
+Rfr: <a href="https://libsndfile.github.io/libsndfile/api.html#open_fd">sf_open_fd</a>.</span></p>
 </li>
 </ul>
 </div>
@@ -989,7 +989,7 @@ Rfr: <a href="http://www.mega-nerd.com/libsndfile/api.html#open_fd">sf_open_fd</
 <ul>
 <li>
 <p><strong>close</strong>(<em>sndfile</em>)<br>
-<span class="small">Rfr: <a href="http://www.mega-nerd.com/libsndfile/api.html#close">sf_close</a>.</span></p>
+<span class="small">Rfr: <a href="https://libsndfile.github.io/libsndfile/api.html#close">sf_close</a>.</span></p>
 </li>
 </ul>
 </div>
@@ -1001,7 +1001,7 @@ retrieved at any time with the following function:</p>
 <ul>
 <li>
 <p><a href="#fileinfo"><em>fileinfo</em></a> = <strong>get_fileinfo</strong>(<em>sndfile</em>)<br>
-<span class="small">Rfr: <a href="http://www.mega-nerd.com/libsndfile/command.html#SFC_GET_CURRENT_SF_INFO">SFC_GET_CURRENT_SF_INFO</a>.</span></p>
+<span class="small">Rfr: <a href="https://libsndfile.github.io/libsndfile/command.html#sfc_get_current_sf_info">SFC_GET_CURRENT_SF_INFO</a>.</span></p>
 </li>
 </ul>
 </div>
@@ -1048,7 +1048,7 @@ retrieved at any time with the following function:</p>
 <p><em>offset</em> = <strong>seek</strong>(<em>sndfile</em>, <em>frames</em>, <a href="#whence"><em>whence</em></a>)<br>
 <span class="small">Returns <em>nil</em> followed by a string error message if a seek error occurred,
 i.e. if <em>sf_seek( )</em> returned -1.<br>
-Rfr: <a href="http://www.mega-nerd.com/libsndfile/api.html#seek">sf_seek</a>.</span></p>
+Rfr: <a href="https://libsndfile.github.io/libsndfile/api.html#seek">sf_seek</a>.</span></p>
 </li>
 </ul>
 </div>
@@ -1059,7 +1059,7 @@ Rfr: <a href="http://www.mega-nerd.com/libsndfile/api.html#seek">sf_seek</a>.</s
 <ul>
 <li>
 <p><strong>write_sync</strong>(<em>sndfile</em>)<br>
-<span class="small">Rfr: <a href="http://www.mega-nerd.com/libsndfile/api.html#write_sync">sf_write_sync</a>.</span></p>
+<span class="small">Rfr: <a href="https://libsndfile.github.io/libsndfile/api.html#write_sync">sf_write_sync</a>.</span></p>
 </li>
 </ul>
 </div>
@@ -1073,7 +1073,7 @@ Rfr: <a href="http://www.mega-nerd.com/libsndfile/api.html#seek">sf_seek</a>.</s
 <span class="small"><em>frames</em>: integer (number of frames to read).<br>
 Returns the frame <em>data</em> as a binary string, followed by the number of frames actually read.<br>
 Returns <em>nil, 0</em> if no data was read (end of file).<br>
-Rfr: <a href="http://www.mega-nerd.com/libsndfile/api.html#read">sf_readf_xxx</a>.</span></p>
+Rfr: <a href="https://libsndfile.github.io/libsndfile/api.html#read">sf_readf_xxx</a>.</span></p>
 </li>
 </ul>
 </div>
@@ -1085,7 +1085,7 @@ Rfr: <a href="http://www.mega-nerd.com/libsndfile/api.html#read">sf_readf_xxx</a
 The length of <em>data</em> must be an integer multiple of the length of a frame (<em>sizeof(type)</em>
 times the no. of channels).<br>
 Returns the number of frames actually written, followed by the number of frames that were contained in <em>data</em>.<br>
-Rfr: <a href="http://www.mega-nerd.com/libsndfile/api.html#write">sf_writef_xxx</a>.</span></p>
+Rfr: <a href="https://libsndfile.github.io/libsndfile/api.html#write">sf_writef_xxx</a>.</span></p>
 </li>
 </ul>
 </div>
@@ -1097,7 +1097,7 @@ Rfr: <a href="http://www.mega-nerd.com/libsndfile/api.html#write">sf_writef_xxx<
 <li>
 <p><em>boolean</em> = <strong>get_clipping</strong>(<em>sndfile</em>)<br>
 <strong>set_clipping</strong>(<em>sndfile</em>, <em>boolean</em>)<br>
-<span class="small">Rfr: <a href="http://www.mega-nerd.com/libsndfile/command.html#SFC_SET_CLIPPING">SFC_SET_CLIPPING</a>.</span></p>
+<span class="small">Rfr: <a href="https://libsndfile.github.io/libsndfile/command.html#sfc_set_clipping">SFC_SET_CLIPPING</a>.</span></p>
 </li>
 </ul>
 </div>
@@ -1106,7 +1106,7 @@ Rfr: <a href="http://www.mega-nerd.com/libsndfile/api.html#write">sf_writef_xxx<
 <li>
 <p><em>boolean</em> = <strong>get_norm_float</strong>(<em>sndfile</em>)<br>
 <strong>set_norm_float</strong>(<em>sndfile</em>, <em>boolean</em>)<br>
-<span class="small">Rfr: <a href="http://www.mega-nerd.com/libsndfile/command.html#SFC_SET_NORM_FLOAT">SFC_SET_NORM_FLOAT</a>.</span></p>
+<span class="small">Rfr: <a href="https://libsndfile.github.io/libsndfile/command.html#sfc_set_norm_float">SFC_SET_NORM_FLOAT</a>.</span></p>
 </li>
 </ul>
 </div>
@@ -1115,7 +1115,7 @@ Rfr: <a href="http://www.mega-nerd.com/libsndfile/api.html#write">sf_writef_xxx<
 <li>
 <p><em>boolean</em> = <strong>get_norm_double</strong>(<em>sndfile</em>)<br>
 <strong>set_norm_double</strong>(<em>sndfile</em>, <em>boolean</em>)<br>
-<span class="small">Rfr: <a href="http://www.mega-nerd.com/libsndfile/command.html#SFC_SET_NORM_DOUBLE">SFC_SET_NORM_DOUBLE</a>.</span></p>
+<span class="small">Rfr: <a href="https://libsndfile.github.io/libsndfile/command.html#sfc_set_norm_double">SFC_SET_NORM_DOUBLE</a>.</span></p>
 </li>
 </ul>
 </div>
@@ -1124,8 +1124,8 @@ Rfr: <a href="http://www.mega-nerd.com/libsndfile/api.html#write">sf_writef_xxx<
 <li>
 <p><strong>set_scale_int_float_write</strong>(<em>sndfile</em>, <em>boolean</em>)<br>
 <strong>set_scale_float_int_read</strong>(<em>sndfile</em>, <em>boolean</em>)<br>
-<span class="small">Rfr: <a href="http://www.mega-nerd.com/libsndfile/command.html#SFC_SET_SCALE_INT_FLOAT_WRITE">SFC_SET_SCALE_INT_FLOAT_WRITE</a>,
-<a href="http://www.mega-nerd.com/libsndfile/command.html#SFC_SET_SCALE_FLOAT_INT_READ">SFC_SET_SCALE_FLOAT_INT_READ</a>.</span></p>
+<span class="small">Rfr: <a href="https://libsndfile.github.io/libsndfile/command.html#sfc_set_scale_int_float_write">SFC_SET_SCALE_INT_FLOAT_WRITE</a>,
+<a href="https://libsndfile.github.io/libsndfile/command.html#sfc_set_scale_float_int_read">SFC_SET_SCALE_FLOAT_INT_READ</a>.</span></p>
 </li>
 </ul>
 </div>
@@ -1133,7 +1133,7 @@ Rfr: <a href="http://www.mega-nerd.com/libsndfile/api.html#write">sf_writef_xxx<
 <ul>
 <li>
 <p><strong>file_truncate</strong>(<em>sndfile</em>, <em>frames</em>)<br>
-<span class="small">Rfr: <a href="http://www.mega-nerd.com/libsndfile/command.html#SFC_FILE_TRUNCATE">SFC_FILE_TRUNCATE</a>.</span></p>
+<span class="small">Rfr: <a href="https://libsndfile.github.io/libsndfile/command.html#sfc_file_truncate">SFC_FILE_TRUNCATE</a>.</span></p>
 </li>
 </ul>
 </div>
@@ -1142,8 +1142,8 @@ Rfr: <a href="http://www.mega-nerd.com/libsndfile/api.html#write">sf_writef_xxx<
 <li>
 <p><strong>update_header_now</strong>(<em>sndfile</em>)<br>
 <strong>set_update_header_auto</strong>(<em>sndfile</em>, <em>boolean</em>)<br>
-<span class="small">Rfr: <a href="http://www.mega-nerd.com/libsndfile/command.html#SFC_UPDATE_HEADER_NOW">SFC_UPDATE_HEADER_NOW</a>,
-<a href="http://www.mega-nerd.com/libsndfile/command.html#SFC_SET_UPDATE_HEADER_AUTO">SFC_SET_UPDATE_HEADER_AUTO</a>.</span></p>
+<span class="small">Rfr: <a href="https://libsndfile.github.io/libsndfile/command.html#sfc_update_header_now">SFC_UPDATE_HEADER_NOW</a>,
+<a href="https://libsndfile.github.io/libsndfile/command.html#sfc_set_update_header_auto">SFC_SET_UPDATE_HEADER_AUTO</a>.</span></p>
 </li>
 </ul>
 </div>
@@ -1151,7 +1151,7 @@ Rfr: <a href="http://www.mega-nerd.com/libsndfile/api.html#write">sf_writef_xxx<
 <ul>
 <li>
 <p><strong>rf64_auto_downgrade</strong>(<em>sndfile</em>, <em>boolean</em>)<br>
-<span class="small">Rfr: <a href="http://www.mega-nerd.com/libsndfile/command.html#SFC_RF64_AUTO_DOWNGRADE">SFC_RF64_AUTO_DOWNGRADE</a>.</span></p>
+<span class="small">Rfr: <a href="https://libsndfile.github.io/libsndfile/command.html#sfc_rf64_auto_downgrade">SFC_RF64_AUTO_DOWNGRADE</a>.</span></p>
 </li>
 </ul>
 </div>
@@ -1159,7 +1159,7 @@ Rfr: <a href="http://www.mega-nerd.com/libsndfile/api.html#write">sf_writef_xxx<
 <ul>
 <li>
 <p><strong>set_vbr_encoding_quality</strong>(<em>sndfile</em>, <em>value</em>)<br>
-<span class="small">Rfr: <a href="http://www.mega-nerd.com/libsndfile/command.html#SFC_SET_VBR_ENCODING_QUALITY">SFC_SET_VBR_ENCODING_QUALITY</a>.</span></p>
+<span class="small">Rfr: <a href="https://libsndfile.github.io/libsndfile/command.html#sfc_set_vbr_encoding_quality">SFC_SET_VBR_ENCODING_QUALITY</a>.</span></p>
 </li>
 </ul>
 </div>
@@ -1167,7 +1167,7 @@ Rfr: <a href="http://www.mega-nerd.com/libsndfile/api.html#write">sf_writef_xxx<
 <ul>
 <li>
 <p><strong>set_compression_level</strong>(<em>sndfile</em>, <em>value</em>)<br>
-<span class="small">Rfr: <a href="http://www.mega-nerd.com/libsndfile/command.html#SFC_SET_COMPRESSION_LEVEL">SFC_SET_COMPRESSION_LEVEL</a>.</span></p>
+<span class="small">Rfr: <a href="https://libsndfile.github.io/libsndfile/command.html#sfc_set_compression_level">SFC_SET_COMPRESSION_LEVEL</a>.</span></p>
 </li>
 </ul>
 </div>
@@ -1175,7 +1175,24 @@ Rfr: <a href="http://www.mega-nerd.com/libsndfile/api.html#write">sf_writef_xxx<
 <ul>
 <li>
 <p><strong>set_add_peak_chunk</strong>(<em>sndfile</em>, <em>boolean</em>)<br>
-<span class="small">Rfr: <a href="http://www.mega-nerd.com/libsndfile/command.html#SFC_SET_ADD_PEAK_CHUNK">SFC_SET_ADD_PEAK_CHUNK</a>.</span></p>
+<span class="small">Rfr: <a href="https://libsndfile.github.io/libsndfile/command.html#sfc_set_add_peak_chunk">SFC_SET_ADD_PEAK_CHUNK</a>.</span></p>
+</li>
+</ul>
+</div>
+<div id="set_ogg_page_latency_ms" class="ulist">
+<ul>
+<li>
+<p><strong>set_ogg_page_latency_ms</strong>(<em>sndfile</em>, <em>value</em>)<br>
+<span class="small">Rfr: <a href="https://libsndfile.github.io/libsndfile/command.html#sfc_set_ogg_page_latency_ms">SFC_SET_OGG_PAGE_LATENCY_MS</a>.</span></p>
+</li>
+</ul>
+</div>
+<div id="set_bitrate_mode" class="ulist">
+<ul>
+<li>
+<p><strong>set_bitrate_mode</strong>(<em>sndfile</em>, <a href="#bitratemode"><em>bitratemode</em></a>)<br>
+<a href="#bitratemode"><em>bitratemode</em></a> = <strong>get_bitrate_mode</strong>(<em>sndfile</em>)<br>
+<span class="small">Rfr: <a href="https://libsndfile.github.io/libsndfile/command.html#sfc_set_bitrate_mode">SFC_SET_BITRATE_MODE</a>, <a href="https://libsndfile.github.io/libsndfile/command.html#sfc_get_bitrate_mode">SFC_GET_BITRATE_MODE</a>.</span></p>
 </li>
 </ul>
 </div>
@@ -1187,7 +1204,7 @@ Rfr: <a href="http://www.mega-nerd.com/libsndfile/api.html#write">sf_writef_xxx<
 <li>
 <p><em>data</em> = <strong>read_raw</strong>(<em>sndfile</em>, <em>bytes</em>)<br>
 <span class="small">Returns the read <em>data</em> as a binary string.<br>
-Rfr: <a href="http://www.mega-nerd.com/libsndfile/api.html#raw">sf_read_raw</a>.</span></p>
+Rfr: <a href="https://libsndfile.github.io/libsndfile/api.html#raw">sf_read_raw</a>.</span></p>
 </li>
 </ul>
 </div>
@@ -1197,7 +1214,7 @@ Rfr: <a href="http://www.mega-nerd.com/libsndfile/api.html#raw">sf_read_raw</a>.
 <p><em>bytes</em> = <strong>write_raw</strong>(<em>sndfile</em>, <em>data</em>)<br>
 <span class="small"><em>data</em>: binary string (data to write)<br>
 Returns the number of bytes actually written (may be less than the length of <em>data</em>).<br>
-Rfr: <a href="http://www.mega-nerd.com/libsndfile/api.html#raw">sf_write_raw</a>.</span></p>
+Rfr: <a href="https://libsndfile.github.io/libsndfile/api.html#raw">sf_write_raw</a>.</span></p>
 </li>
 </ul>
 </div>
@@ -1205,7 +1222,7 @@ Rfr: <a href="http://www.mega-nerd.com/libsndfile/api.html#raw">sf_write_raw</a>
 <ul>
 <li>
 <p><strong>set_raw_start_offset</strong>(<em>sndfile</em>, <em>bytes</em>)<br>
-<span class="small">Rfr: <a href="http://www.mega-nerd.com/libsndfile/command.html#SFC_SET_RAW_START_OFFSET">SFC_SET_RAW_START_OFFSET</a>.</span></p>
+<span class="small">Rfr: <a href="https://libsndfile.github.io/libsndfile/command.html#sfc_set_raw_start_offset">SFC_SET_RAW_START_OFFSET</a>.</span></p>
 </li>
 </ul>
 </div>
@@ -1213,7 +1230,7 @@ Rfr: <a href="http://www.mega-nerd.com/libsndfile/api.html#raw">sf_write_raw</a>
 <ul>
 <li>
 <p><em>boolean</em> = <strong>raw_data_needs_endswap</strong>(<em>sndfile</em>)<br>
-<span class="small">Rfr: <a href="http://www.mega-nerd.com/libsndfile/command.html#SFC_RAW_NEEDS_ENDSWAP">SFC_RAW_DATA_NEEDS_ENDSWAP</a>.</span></p>
+<span class="small">Rfr: <a href="https://libsndfile.github.io/libsndfile/command.html#sfc_raw_needs_endswap">SFC_RAW_DATA_NEEDS_ENDSWAP</a>.</span></p>
 </li>
 </ul>
 </div>
@@ -1224,7 +1241,7 @@ Rfr: <a href="http://www.mega-nerd.com/libsndfile/api.html#raw">sf_write_raw</a>
 <ul>
 <li>
 <p><em>boolean</em> = <strong>format_check</strong>(<a href="#format"><em>format</em></a>, <a href="#subformat"><em>subformat</em></a>)<br>
-<span class="small">Rfr: <a href="http://www.mega-nerd.com/libsndfile/api.html#sf_format_check">sf_format_check</a>.</span></p>
+<span class="small">Rfr: <a href="https://libsndfile.github.io/libsndfile/api.html#sf_format_check">sf_format_check</a>.</span></p>
 </li>
 </ul>
 </div>
@@ -1232,7 +1249,7 @@ Rfr: <a href="http://www.mega-nerd.com/libsndfile/api.html#raw">sf_write_raw</a>
 <ul>
 <li>
 <p>{<a href="#simpleformat"><em>simpleformat</em></a>} = <strong>get_simple_format_list</strong>( )<br>
-<span class="small">Rfr: <a href="http://www.mega-nerd.com/libsndfile/command.html#SFC_GET_SIMPLE_FORMAT">SFC_GET_SIMPLE_FORMAT</a>.</span></p>
+<span class="small">Rfr: <a href="https://libsndfile.github.io/libsndfile/command.html#sfc_get_simple_format">SFC_GET_SIMPLE_FORMAT</a>.</span></p>
 </li>
 </ul>
 </div>
@@ -1242,7 +1259,7 @@ Rfr: <a href="http://www.mega-nerd.com/libsndfile/api.html#raw">sf_write_raw</a>
 <p><a href="#formatinfo"><em>formatinfo</em></a> = <strong>get_format_info</strong>(<a href="#format"><em>format</em></a>)<br>
 <a href="#subformatinfo"><em>subformatinfo</em></a> = <strong>get_subformat_info</strong>(<a href="#subformat"><em>subformat</em></a>)<br>
 {<a href="#formatinfo"><em>formatinfo</em></a>} = <strong>get_format_list</strong>( )<br>
-<span class="small">Rfr: <a href="http://www.mega-nerd.com/libsndfile/command.html#SFC_GET_FORMAT_INFO">SFC_GET_FORMAT_INFO</a>.</span></p>
+<span class="small">Rfr: <a href="https://libsndfile.github.io/libsndfile/command.html#sfc_get_format_info">SFC_GET_FORMAT_INFO</a>.</span></p>
 </li>
 </ul>
 </div>
@@ -1275,8 +1292,8 @@ is a list of all the subformats supported by the format it refers to.
 <li>
 <p><em>value</em> = <strong>get_signal_max</strong>(<em>sndfile</em>)<br>
 {<em>value</em>} = <strong>get_max_all_channels</strong>(<em>sndfile</em>)<br>
-<span class="small">Rfr: <a href="http://www.mega-nerd.com/libsndfile/command.html#SFC_GET_SIGNAL_MAX">SFC_GET_SIGNAL_MAX</a>,
-<a href="http://www.mega-nerd.com/libsndfile/command.html#SFC_GET_MAX_ALL_CHANNELS">SFC_GET_MAX_ALL_CHANNELS</a>.</span></p>
+<span class="small">Rfr: <a href="https://libsndfile.github.io/libsndfile/command.html#sfc_get_signal_max">SFC_GET_SIGNAL_MAX</a>,
+<a href="https://libsndfile.github.io/libsndfile/command.html#sfc_get_max_all_channels">SFC_GET_MAX_ALL_CHANNELS</a>.</span></p>
 </li>
 </ul>
 </div>
@@ -1285,8 +1302,8 @@ is a list of all the subformats supported by the format it refers to.
 <li>
 <p><em>value</em> = <strong>calc_signal_max</strong>(<em>sndfile</em>)<br>
 {<em>value</em>} = <strong>calc_max_all_channels</strong>(<em>sndfile</em>)<br>
-<span class="small">Rfr: <a href="http://www.mega-nerd.com/libsndfile/command.html#SFC_CALC_SIGNAL_MAX">SFC_CALC_SIGNAL_MAX</a>,
-<a href="http://www.mega-nerd.com/libsndfile/command.html#SFC_CALC_MAX_ALL_CHANNELS">SFC_CALC_MAX_ALL_CHANNELS</a>.</span></p>
+<span class="small">Rfr: <a href="https://libsndfile.github.io/libsndfile/command.html#sfc_calc_signal_max">SFC_CALC_SIGNAL_MAX</a>,
+<a href="https://libsndfile.github.io/libsndfile/command.html#sfc_calc_max_all_channels">SFC_CALC_MAX_ALL_CHANNELS</a>.</span></p>
 </li>
 </ul>
 </div>
@@ -1295,8 +1312,8 @@ is a list of all the subformats supported by the format it refers to.
 <li>
 <p><em>value</em> = <strong>calc_norm_signal_max</strong>(<em>sndfile</em>)<br>
 {<em>value</em>} = <strong>calc_norm_max_all_channels</strong>(<em>sndfile</em>)<br>
-<span class="small">Rfr: <a href="http://www.mega-nerd.com/libsndfile/command.html#SFC_CALC_NORM_SIGNAL_MAX">SFC_CALC_NORM_SIGNAL_MAX</a>,
-<a href="http://www.mega-nerd.com/libsndfile/command.html#SFC_CALC_NORM_MAX_ALL_CHANNELS">SFC_CALC_NORM_MAX_ALL_CHANNELS</a>.</span></p>
+<span class="small">Rfr: <a href="https://libsndfile.github.io/libsndfile/command.html#sfc_calc_norm_signal_max">SFC_CALC_NORM_SIGNAL_MAX</a>,
+<a href="https://libsndfile.github.io/libsndfile/command.html#sfc_calc_norm_max_all_channels">SFC_CALC_NORM_MAX_ALL_CHANNELS</a>.</span></p>
 </li>
 </ul>
 </div>
@@ -1309,7 +1326,7 @@ is a list of all the subformats supported by the format it refers to.
 <p><em>val</em> = <strong>get_string</strong>(<em>sndfile</em>, <a href="#stringtype"><em>stringtype</em></a>)<br>
 <strong>set_string</strong>(<em>sndfile</em>, <a href="#stringtype"><em>stringtype</em></a>, <em>val</em>)<br>
 <span class="small"><em>get_string(&nbsp;)</em> returns <em>nil</em> if the requested <em>stringtype</em> is not present.<br>
-Rfr: <a href="http://www.mega-nerd.com/libsndfile/api.html#string">sf_get_string, sf_set_string</a>.</span></p>
+Rfr: <a href="https://libsndfile.github.io/libsndfile/api.html#string">sf_get_string, sf_set_string</a>.</span></p>
 </li>
 </ul>
 </div>
@@ -1317,7 +1334,7 @@ Rfr: <a href="http://www.mega-nerd.com/libsndfile/api.html#string">sf_get_string
 <ul>
 <li>
 <p><em>offset</em>, <em>length</em> = <strong>get_embed_file_info</strong>(<em>sndfile</em>)<br>
-<span class="small">Rfr: <a href="http://www.mega-nerd.com/libsndfile/command.html#SFC_GET_EMBED_FILE_INFO">SFC_GET_EMBED_FILE_INFO</a>.</span></p>
+<span class="small">Rfr: <a href="https://libsndfile.github.io/libsndfile/command.html#sfc_get_embed_file_info">SFC_GET_EMBED_FILE_INFO</a>.</span></p>
 </li>
 </ul>
 </div>
@@ -1344,7 +1361,16 @@ Rfr: <a href="http://www.mega-nerd.com/libsndfile/api.html#string">sf_get_string
 <li>
 <p><a href="#ambisonic"><em>ambisonic</em></a> = <strong>wavex_get_ambisonic</strong>(<em>sndfile</em>)<br>
 <strong>wavex_set_ambisonic</strong>(<em>sndfile</em>, <a href="#ambisonic"><em>ambisonic</em></a>)<br>
-<span class="small">Rfr: <a href="http://www.mega-nerd.com/libsndfile/command.html#SFC_WAVEX_GET_AMBISONIC">SFC_WAVEX_GET_AMBISONIC</a>, <a href="http://www.mega-nerd.com/libsndfile/command.html#SFC_WAVEX_SET_AMBISONIC">SFC_WAVEX_SET_AMBISONIC</a>.</span></p>
+<span class="small">Rfr: <a href="https://libsndfile.github.io/libsndfile/command.html#sfc_wavex_get_ambisonic">SFC_WAVEX_GET_AMBISONIC</a>, <a href="https://libsndfile.github.io/libsndfile/command.html#sfc_wavex_set_ambisonic">SFC_WAVEX_SET_AMBISONIC</a>.</span></p>
+</li>
+</ul>
+</div>
+<div id="set_original_samplerate" class="ulist">
+<ul>
+<li>
+<p><strong>set_original_samplerate</strong>(<em>sndfile</em>, <em>value</em>)<br>
+<em>value</em> = <strong>get_original_samplerate</strong>(<em>sndfile</em>)<br>
+<span class="small">Rfr: <a href="https://libsndfile.github.io/libsndfile/command.html#sfc_set_original_samplerate">SFC_SET_ORIGINAL_SAMPLERATE</a>, <a href="https://libsndfile.github.io/libsndfile/command.html#sfc_get_original_samplerate">SFC_GET_ORIGINAL_SAMPLERATE</a>.</span></p>
 </li>
 </ul>
 </div>
@@ -1365,7 +1391,7 @@ Rfr: <a href="http://www.mega-nerd.com/libsndfile/api.html#string">sf_get_string
 <em>frames</em>: integer,<br>
 <em>sections</em>: integer,<br>
 <em>seekable</em>: boolean,<br>
-} (Rfr: <a href="http://www.mega-nerd.com/libsndfile/api.html#open">SF_INFO</a>).</span></p>
+} (Rfr: <a href="https://libsndfile.github.io/libsndfile/api.html#open">SF_INFO</a>).</span></p>
 </div>
 <div id="formatinfo" class="paragraph">
 <p><span class="small"><strong>formatinfo</strong> = {<br>
@@ -1374,21 +1400,21 @@ Rfr: <a href="http://www.mega-nerd.com/libsndfile/api.html#string">sf_get_string
 <em>name</em>: string,<br>
 <em>extension</em>: string,<br>
 <em>subformats</em>: {<a href="#subformatinfo"><em>subformatinfo</em></a>},<br>
-} (Rfr: <a href="http://www.mega-nerd.com/libsndfile/command.html#SFC_GET_SIMPLE_FORMAT">SF_FORMAT_INFO</a>).</span></p>
+} (Rfr: <a href="https://libsndfile.github.io/libsndfile/command.html#sfc_get_simple_format">SF_FORMAT_INFO</a>).</span></p>
 </div>
 <div id="subformatinfo" class="paragraph">
 <p><span class="small"><strong>subformatinfo</strong> = {<br>
 <em>subformat</em>: <a href="#subformat"><em>subformat</em></a>,<br>
 <em>code</em>: integer,<br>
 <em>name</em>: string,<br>
-} (Rfr: <a href="http://www.mega-nerd.com/libsndfile/command.html#SFC_GET_SIMPLE_FORMAT">SF_FORMAT_INFO</a>).</span></p>
+} (Rfr: <a href="https://libsndfile.github.io/libsndfile/command.html#sfc_get_simple_format">SF_FORMAT_INFO</a>).</span></p>
 </div>
 <div id="simpleformat" class="paragraph">
 <p><span class="small"><strong>simpleformat</strong> = {<br>
 <em>code</em>: integer,<br>
 <em>name</em>: string,<br>
 <em>extension</em>: string,<br>
-} (Rfr: <a href="http://www.mega-nerd.com/libsndfile/command.html#SFC_GET_SIMPLE_FORMAT">SF_FORMAT_INFO</a>).</span></p>
+} (Rfr: <a href="https://libsndfile.github.io/libsndfile/command.html#sfc_get_simple_format">SF_FORMAT_INFO</a>).</span></p>
 </div>
 <div id="chunk" class="paragraph">
 <p><span class="small"><strong>chunk</strong> = {<br>
@@ -1425,6 +1451,10 @@ a particular enum type.</p>
 <p>Below is the list of the enum types, each with its hint, the list of string values it
 admits.</p>
 </div>
+<div id="bitratemode" class="paragraph">
+<p><span class="small"><strong>bitratemode</strong>: sf.BITRATE_MODE_XXX<br>
+Values: '<em>constant</em>', '<em>average</em>', '<em>variable</em>'.</span></p>
+</div>
 <div id="channelmap" class="paragraph">
 <p><span class="small"><strong>channelmap</strong>: sf.CHANNEL_MAP_XXX<br>
 Values: '<em>invalid</em>', '<em>mono</em>', '<em>left</em>', '<em>right</em>', '<em>center</em>', '<em>front left</em>', '<em>front right</em>', '<em>front center</em>', '<em>rear center</em>', '<em>rear left</em>', '<em>rear right</em>', '<em>lfe</em>', '<em>front left of center</em>', '<em>front right of center</em>', '<em>side left</em>', '<em>side right</em>', '<em>top center</em>', '<em>top front left</em>', '<em>top front right</em>', '<em>top front center</em>', '<em>top rear left</em>', '<em>top rear right</em>', '<em>top rear center</em>', '<em>ambisonic b w</em>', '<em>ambisonic b x</em>', '<em>ambisonic b y</em>', '<em>ambisonic b z</em>'.</span></p>
@@ -1436,7 +1466,7 @@ Values: '<em>file</em>', '<em>little</em>', '<em>big</em>', '<em>cpu</em>'.</spa
 <div id="format" class="paragraph">
 <p><span class="small"><strong>format</strong>: sf.FORMAT_XXX<br>
 Values:
-'<em>wav</em>', '<em>aiff</em>', '<em>au</em>', '<em>raw</em>', '<em>paf</em>', '<em>svx</em>', '<em>nist</em>', '<em>voc</em>', '<em>ircam</em>', '<em>w64</em>', '<em>mat4</em>', '<em>mat5</em>', '<em>pvf</em>', '<em>xi</em>', '<em>htk</em>', '<em>sds</em>', '<em>avr</em>', '<em>wavex</em>', '<em>sd2</em>', '<em>flac</em>', '<em>caf</em>', '<em>wve</em>', '<em>ogg</em>', '<em>mpc2k</em>', '<em>rf64</em>'.</span></p>
+'<em>wav</em>', '<em>aiff</em>', '<em>au</em>', '<em>raw</em>', '<em>paf</em>', '<em>svx</em>', '<em>nist</em>', '<em>voc</em>', '<em>ircam</em>', '<em>w64</em>', '<em>mat4</em>', '<em>mat5</em>', '<em>pvf</em>', '<em>xi</em>', '<em>htk</em>', '<em>sds</em>', '<em>avr</em>', '<em>wavex</em>', '<em>sd2</em>', '<em>flac</em>', '<em>caf</em>', '<em>wve</em>', '<em>ogg</em>', '<em>mpc2k</em>', '<em>rf64</em>', '<em>mpeg</em>'.</span></p>
 </div>
 <div id="loopmode" class="paragraph">
 <p><span class="small"><strong>loopmode</strong>: sf.LOOP_XXX<br>
@@ -1455,7 +1485,7 @@ Values:
 <div id="subformat" class="paragraph">
 <p><span class="small"><strong>subformat</strong>: sf.FORMAT_XXX<br>
 Values:
-'<em>pcm s8</em>', '<em>pcm 16</em>', '<em>pcm 24</em>', '<em>pcm 32</em>', '<em>pcm u8</em>', '<em>float</em>', '<em>double</em>', '<em>ulaw</em>', '<em>alaw</em>', '<em>ima adpcm</em>', '<em>ms adpcm</em>', '<em>gsm610</em>', '<em>vox adpcm</em>', '<em>g721 32</em>', '<em>g723 24</em>', '<em>g723 40</em>', '<em>dwvw 12</em>', '<em>dwvw 16</em>', '<em>dwvw 24</em>', '<em>dwvw n</em>', '<em>dpcm 8</em>', '<em>dpcm 16</em>', '<em>vorbis</em>', '<em>alac 16</em>', '<em>alac 20</em>', '<em>alac 24</em>', '<em>alac 32</em>'.</span></p>
+'<em>pcm s8</em>', '<em>pcm 16</em>', '<em>pcm 24</em>', '<em>pcm 32</em>', '<em>pcm u8</em>', '<em>float</em>', '<em>double</em>', '<em>ulaw</em>', '<em>alaw</em>', '<em>ima adpcm</em>', '<em>ms adpcm</em>', '<em>gsm610</em>', '<em>vox adpcm</em>', '<em>g721 32</em>', '<em>g723 24</em>', '<em>g723 40</em>', '<em>dwvw 12</em>', '<em>dwvw 16</em>', '<em>dwvw 24</em>', '<em>dwvw n</em>', '<em>dpcm 8</em>', '<em>dpcm 16</em>', '<em>vorbis</em>', '<em>alac 16</em>', '<em>alac 20</em>', '<em>alac 24</em>', '<em>alac 32</em>', '<em>nms adpcm 16</em>', '<em>nms adpcm 24</em>', '<em>nms adpcm 32</em>', '<em>opus</em>', '<em>mpeg layer i</em>', '<em>mpeg layer ii</em>', '<em>mpeg layer iii</em>'.</span></p>
 </div>
 <div id="type" class="paragraph">
 <p><span class="small"><strong>type</strong>: -<br>
@@ -1490,7 +1520,7 @@ Values: '<em>set</em>', '<em>cur</em>', '<em>end</em>', '<em>set r</em>', '<em>c
 <li>
 <p><em>version</em> = <strong>version_string</strong>( )<br>
 <em>major</em>, <em>minor</em>, <em>patch</em> = <strong>version_number</strong>( )<br>
-<span class="small">Rfr: <a href="http://www.mega-nerd.com/libsndfile/api.html#sf_version_string">sf_version_string</a>.</span></p>
+<span class="small">Rfr: <a href="https://libsndfile.github.io/libsndfile/api.html#sf_version_string">sf_version_string</a>.</span></p>
 </li>
 </ul>
 </div>

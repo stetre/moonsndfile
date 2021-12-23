@@ -55,6 +55,7 @@ void enums_freelist(lua_State *L, int *list);
 #define DOMAIN_DITHER_TYPE      9
 #define DOMAIN_LOOP_MODE        10
 #define DOMAIN_AMBISONIC        11
+#define DOMAIN_BITRATE_MODE     12
 
 /* NONSF additions */
 #define DOMAIN_NONSF_TYPE                  101
@@ -128,7 +129,12 @@ void enums_freelist(lua_State *L, int *list);
 #define pushambisonic(L, val) enums_push((L), DOMAIN_AMBISONIC, (uint32_t)(val))
 #define valuesambisonic(L) enums_values((L), DOMAIN_AMBISONIC)
 
-#if 0 /* scaffolding 6yy */
+#define testbitratemode(L, arg, err) (int)enums_test((L), DOMAIN_BITRATE_MODE, (arg), (err))
+#define checkbitratemode(L, arg) (int)enums_check((L), DOMAIN_BITRATE_MODE, (arg))
+#define pushbitratemode(L, val) enums_push((L), DOMAIN_BITRATE_MODE, (uint32_t)(val))
+#define valuesbitratemode(L) enums_values((L), DOMAIN_BITRATE_MODE)
+
+#if 0 /* scaffolding 8yy */
 #define testxxx(L, arg, err) (Xxx)enums_test((L), DOMAIN_XXX, (arg), (err))
 #define checkxxx(L, arg) (Xxx)enums_check((L), DOMAIN_XXX, (arg))
 #define pushxxx(L, val) enums_push((L), DOMAIN_XXX, (uint32_t)(val))

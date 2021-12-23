@@ -29,6 +29,10 @@ admits.
 Values: '_none_', '_b format_'.#
 ////
 
+[[bitratemode]]
+[small]#*bitratemode*: sf.BITRATE_MODE_XXX +
+Values: '_constant_', '_average_', '_variable_'.#
+
 [[channelmap]]
 [small]#*channelmap*: sf.CHANNEL_MAP_XXX +
 Values: '_invalid_', '_mono_', '_left_', '_right_', '_center_', '_front left_', '_front right_', '_front center_', '_rear center_', '_rear left_', '_rear right_', '_lfe_', '_front left of center_', '_front right of center_', '_side left_', '_side right_', '_top center_', '_top front left_', '_top front right_', '_top front center_', '_top rear left_', '_top rear right_', '_top rear center_', '_ambisonic b w_', '_ambisonic b x_', '_ambisonic b y_', '_ambisonic b z_'.#
@@ -52,7 +56,7 @@ Values: '_file_', '_little_', '_big_', '_cpu_'.#
 [[format]]
 [small]#*format*: sf.FORMAT_XXX +
 Values: 
-'_wav_', '_aiff_', '_au_', '_raw_', '_paf_', '_svx_', '_nist_', '_voc_', '_ircam_', '_w64_', '_mat4_', '_mat5_', '_pvf_', '_xi_', '_htk_', '_sds_', '_avr_', '_wavex_', '_sd2_', '_flac_', '_caf_', '_wve_', '_ogg_', '_mpc2k_', '_rf64_'.#
+'_wav_', '_aiff_', '_au_', '_raw_', '_paf_', '_svx_', '_nist_', '_voc_', '_ircam_', '_w64_', '_mat4_', '_mat5_', '_pvf_', '_xi_', '_htk_', '_sds_', '_avr_', '_wavex_', '_sd2_', '_flac_', '_caf_', '_wve_', '_ogg_', '_mpc2k_', '_rf64_', '_mpeg_'.#
 
 [[loopmode]]
 [small]#*loopmode*: sf.LOOP_XXX +
@@ -71,7 +75,7 @@ Values:
 [[subformat]]
 [small]#*subformat*: sf.FORMAT_XXX +
 Values: 
-'_pcm s8_', '_pcm 16_', '_pcm 24_', '_pcm 32_', '_pcm u8_', '_float_', '_double_', '_ulaw_', '_alaw_', '_ima adpcm_', '_ms adpcm_', '_gsm610_', '_vox adpcm_', '_g721 32_', '_g723 24_', '_g723 40_', '_dwvw 12_', '_dwvw 16_', '_dwvw 24_', '_dwvw n_', '_dpcm 8_', '_dpcm 16_', '_vorbis_', '_alac 16_', '_alac 20_', '_alac 24_', '_alac 32_'.#
+'_pcm s8_', '_pcm 16_', '_pcm 24_', '_pcm 32_', '_pcm u8_', '_float_', '_double_', '_ulaw_', '_alaw_', '_ima adpcm_', '_ms adpcm_', '_gsm610_', '_vox adpcm_', '_g721 32_', '_g723 24_', '_g723 40_', '_dwvw 12_', '_dwvw 16_', '_dwvw 24_', '_dwvw n_', '_dpcm 8_', '_dpcm 16_', '_vorbis_', '_alac 16_', '_alac 20_', '_alac 24_', '_alac 32_', '_nms adpcm 16_', '_nms adpcm 24_', '_nms adpcm 32_', '_opus_', '_mpeg layer i_', '_mpeg layer ii_', '_mpeg layer iii_'.#
 
 [[type]]
 [small]#*type*: - +

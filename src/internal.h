@@ -173,6 +173,10 @@ int command_set_count(lua_State *L, int command);
 int command_get_boolean(lua_State *L, int command);
 #define command_set_boolean moonsndfile_command_set_boolean
 int command_set_boolean(lua_State *L, int command);
+#define command_get_integer moonsndfile_command_get_integer
+int command_get_integer(lua_State *L, int command);
+#define command_set_integer moonsndfile_command_set_integer
+int command_set_integer(lua_State *L, int command);
 #define command_get_double_all_channels moonsndfile_command_get_double_all_channels
 int command_get_double_all_channels(lua_State *L, int command, int success_retcode);
 #define command_get_double moonsndfile_command_get_double

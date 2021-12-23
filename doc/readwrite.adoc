@@ -5,13 +5,13 @@
 * _offset_ = *seek*(_sndfile_, _frames_, <<whence, _whence_>>) +
 [small]#Returns _nil_ followed by a string error message if a seek error occurred,
 i.e. if _sf_seek( )_ returned -1. +
-Rfr: http://www.mega-nerd.com/libsndfile/api.html#seek[sf_seek].#
+Rfr: https://libsndfile.github.io/libsndfile/api.html#seek[sf_seek].#
 
 === Write sync
 
 [[write_sync]]
 * *write_sync*(_sndfile_) +
-[small]#Rfr: http://www.mega-nerd.com/libsndfile/api.html#write_sync[sf_write_sync].#
+[small]#Rfr: https://libsndfile.github.io/libsndfile/api.html#write_sync[sf_write_sync].#
 
 === Read and write
 
@@ -20,7 +20,7 @@ Rfr: http://www.mega-nerd.com/libsndfile/api.html#seek[sf_seek].#
 [small]#_frames_: integer (number of frames to read). +
 Returns the frame _data_ as a binary string, followed by the number of frames actually read. +
 Returns _nil, 0_ if no data was read (end of file). +
-Rfr: http://www.mega-nerd.com/libsndfile/api.html#read[sf_readf_xxx].#
+Rfr: https://libsndfile.github.io/libsndfile/api.html#read[sf_readf_xxx].#
 
 
 [[write]]
@@ -29,66 +29,74 @@ Rfr: http://www.mega-nerd.com/libsndfile/api.html#read[sf_readf_xxx].#
 The length of _data_ must be an integer multiple of the length of a frame (_sizeof(type)_
 times the no. of channels). +
 Returns the number of frames actually written, followed by the number of frames that were contained in _data_. +
-Rfr: http://www.mega-nerd.com/libsndfile/api.html#write[sf_writef_xxx].#
+Rfr: https://libsndfile.github.io/libsndfile/api.html#write[sf_writef_xxx].#
 
 === R/W control
 
 [[get_clipping]]
 * _boolean_ = *get_clipping*(_sndfile_) +
 *set_clipping*(_sndfile_, _boolean_) +
-[small]#Rfr: http://www.mega-nerd.com/libsndfile/command.html#SFC_SET_CLIPPING[SFC_SET_CLIPPING].#
+[small]#Rfr: https://libsndfile.github.io/libsndfile/command.html#sfc_set_clipping[SFC_SET_CLIPPING].#
 
 [[set_norm_float]]
 * _boolean_ = *get_norm_float*(_sndfile_) +
 *set_norm_float*(_sndfile_, _boolean_) +
-[small]#Rfr: http://www.mega-nerd.com/libsndfile/command.html#SFC_SET_NORM_FLOAT[SFC_SET_NORM_FLOAT].#
+[small]#Rfr: https://libsndfile.github.io/libsndfile/command.html#sfc_set_norm_float[SFC_SET_NORM_FLOAT].#
 
 [[set_norm_double]]
 * _boolean_ = *get_norm_double*(_sndfile_) +
 *set_norm_double*(_sndfile_, _boolean_) +
-[small]#Rfr: http://www.mega-nerd.com/libsndfile/command.html#SFC_SET_NORM_DOUBLE[SFC_SET_NORM_DOUBLE].#
+[small]#Rfr: https://libsndfile.github.io/libsndfile/command.html#sfc_set_norm_double[SFC_SET_NORM_DOUBLE].#
 
 [[set_scale_float_int_read]]
 * *set_scale_int_float_write*(_sndfile_, _boolean_) +
 *set_scale_float_int_read*(_sndfile_, _boolean_) +
-[small]#Rfr: http://www.mega-nerd.com/libsndfile/command.html#SFC_SET_SCALE_INT_FLOAT_WRITE[SFC_SET_SCALE_INT_FLOAT_WRITE], 
-http://www.mega-nerd.com/libsndfile/command.html#SFC_SET_SCALE_FLOAT_INT_READ[SFC_SET_SCALE_FLOAT_INT_READ].#
+[small]#Rfr: https://libsndfile.github.io/libsndfile/command.html#sfc_set_scale_int_float_write[SFC_SET_SCALE_INT_FLOAT_WRITE],
+https://libsndfile.github.io/libsndfile/command.html#sfc_set_scale_float_int_read[SFC_SET_SCALE_FLOAT_INT_READ].#
 
 [[file_truncate]]
 * *file_truncate*(_sndfile_, _frames_) +
-[small]#Rfr: http://www.mega-nerd.com/libsndfile/command.html#SFC_FILE_TRUNCATE[SFC_FILE_TRUNCATE].#
+[small]#Rfr: https://libsndfile.github.io/libsndfile/command.html#sfc_file_truncate[SFC_FILE_TRUNCATE].#
 
 
 [[set_update_header_auto]]
 * *update_header_now*(_sndfile_) +
 *set_update_header_auto*(_sndfile_, _boolean_) +
-[small]#Rfr: http://www.mega-nerd.com/libsndfile/command.html#SFC_UPDATE_HEADER_NOW[SFC_UPDATE_HEADER_NOW],
-http://www.mega-nerd.com/libsndfile/command.html#SFC_SET_UPDATE_HEADER_AUTO[SFC_SET_UPDATE_HEADER_AUTO].#
+[small]#Rfr: https://libsndfile.github.io/libsndfile/command.html#sfc_update_header_now[SFC_UPDATE_HEADER_NOW],
+https://libsndfile.github.io/libsndfile/command.html#sfc_set_update_header_auto[SFC_SET_UPDATE_HEADER_AUTO].#
 
 [[rf64_auto_downgrade]]
 * *rf64_auto_downgrade*(_sndfile_, _boolean_) +
-[small]#Rfr: http://www.mega-nerd.com/libsndfile/command.html#SFC_RF64_AUTO_DOWNGRADE[SFC_RF64_AUTO_DOWNGRADE].#
+[small]#Rfr: https://libsndfile.github.io/libsndfile/command.html#sfc_rf64_auto_downgrade[SFC_RF64_AUTO_DOWNGRADE].#
 
 [[set_vbr_encoding_quality]]
 * *set_vbr_encoding_quality*(_sndfile_, _value_) +
-[small]#Rfr: http://www.mega-nerd.com/libsndfile/command.html#SFC_SET_VBR_ENCODING_QUALITY[SFC_SET_VBR_ENCODING_QUALITY].#
+[small]#Rfr: https://libsndfile.github.io/libsndfile/command.html#sfc_set_vbr_encoding_quality[SFC_SET_VBR_ENCODING_QUALITY].#
 
 [[set_compression_level]]
 * *set_compression_level*(_sndfile_, _value_) +
-[small]#Rfr: http://www.mega-nerd.com/libsndfile/command.html#SFC_SET_COMPRESSION_LEVEL[SFC_SET_COMPRESSION_LEVEL].#
+[small]#Rfr: https://libsndfile.github.io/libsndfile/command.html#sfc_set_compression_level[SFC_SET_COMPRESSION_LEVEL].#
 
 [[set_add_peak_chunk]]
 * *set_add_peak_chunk*(_sndfile_, _boolean_) +
-[small]#Rfr: http://www.mega-nerd.com/libsndfile/command.html#SFC_SET_ADD_PEAK_CHUNK[SFC_SET_ADD_PEAK_CHUNK].#
+[small]#Rfr: https://libsndfile.github.io/libsndfile/command.html#sfc_set_add_peak_chunk[SFC_SET_ADD_PEAK_CHUNK].#
 
+[[set_ogg_page_latency_ms]]
+* *set_ogg_page_latency_ms*(_sndfile_, _value_) +
+[small]#Rfr: https://libsndfile.github.io/libsndfile/command.html#sfc_set_ogg_page_latency_ms[SFC_SET_OGG_PAGE_LATENCY_MS].#
+
+[[set_bitrate_mode]]
+* *set_bitrate_mode*(_sndfile_, <<bitratemode, _bitratemode_>>) +
+<<bitratemode, _bitratemode_>> = *get_bitrate_mode*(_sndfile_) +
+[small]#Rfr: https://libsndfile.github.io/libsndfile/command.html#sfc_set_bitrate_mode[SFC_SET_BITRATE_MODE], https://libsndfile.github.io/libsndfile/command.html#sfc_get_bitrate_mode[SFC_GET_BITRATE_MODE].#
 
 ////
 [[]]
 * **(_sndfile_) +
-[small]#Rfr: http://www.mega-nerd.com/libsndfile/api.html#[sf_].#
+[small]#Rfr: https://libsndfile.github.io/libsndfile/api.html#[sf_].#
 
 [[]]
 * **(_sndfile_) +
-[small]#Rfr: http://www.mega-nerd.com/libsndfile/command.html#SFC_[].#
+[small]#Rfr: https://libsndfile.github.io/libsndfile/command.html#sfc_[].#
 
 ////

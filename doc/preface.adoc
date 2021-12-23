@@ -3,7 +3,7 @@
 
 This is the reference manual of *MoonSndFile*, which is a 
 http://www.lua.org[*Lua*] binding library for
-Erik de Castro Lopo's http://www.mega-nerd.com/libsndfile/[*libsndfile*].
+Erik de Castro Lopo's https://libsndfile.github.io/libsndfile/[*libsndfile*].
 footnote:[
 This manual is written in
 http://www.methods.co.nz/asciidoc/[AsciiDoc], rendered with
@@ -14,7 +14,7 @@ It is assumed that the reader is familiar with both libsndfile and the Lua progr
 
 For convenience of reference, this document contains external (deep) links to the 
 http://www.lua.org/manual/5.3/manual.html[Lua Reference Manual] and to the 
-http://www.mega-nerd.com/libsndfile/api.html[libsndfile API documentation].
+https://libsndfile.github.io/libsndfile/api.html[libsndfile API documentation].
 
 === Getting and installing
 

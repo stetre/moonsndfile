@@ -15,7 +15,7 @@ In the first case, the fields listed in the second case are not needed, but if p
 match the values encoded in the _code_ field. +
 In both cases, all other fields apart from _fileinfo.samplerate_ and _fileinfo.channels_ are ignored. +
 The _fileinfo_ argument must not be passed when opening a non-raw file in 'r' or 'rw' mode. +
-Rfr: http://www.mega-nerd.com/libsndfile/api.html#open[sf_open].#
+Rfr: https://libsndfile.github.io/libsndfile/api.html#open[sf_open].#
 
 [[open_fd]]
 * _sndfile_, <<fileinfo, _fileinfo_>> = *open_fd*(_fd_|_fh_, <<openmode, _openmode_>>, [<<fileinfo, _fileinfo_>>], [_closedesc_]) +
@@ -23,18 +23,18 @@ Rfr: http://www.mega-nerd.com/libsndfile/api.html#open[sf_open].#
 The file can be specified either by passing a valid integer file descriptor (_fd_), or by passing a valid 
 http://www.lua.org/manual/5.3/manual.html#pdf-io.open[Lua file handle] (_fh_). +
 The optional _closedesc_ parameter (close the file descriptor) deafults to _false_. +
-Rfr: http://www.mega-nerd.com/libsndfile/api.html#open_fd[sf_open_fd].#
+Rfr: https://libsndfile.github.io/libsndfile/api.html#open_fd[sf_open_fd].#
 
 [[close]]
 * *close*(_sndfile_) +
-[small]#Rfr: http://www.mega-nerd.com/libsndfile/api.html#close[sf_close].#
+[small]#Rfr: https://libsndfile.github.io/libsndfile/api.html#close[sf_close].#
 
 The current, updated, <<fileinfo, _fileinfo_>> (_SF_INFO_) table for a _sndfile_ object can be
 retrieved at any time with the following function:
 
 [[get_fileinfo]]
 * <<fileinfo, _fileinfo_>> = *get_fileinfo*(_sndfile_) +
-[small]#Rfr: http://www.mega-nerd.com/libsndfile/command.html#SFC_GET_CURRENT_SF_INFO[SFC_GET_CURRENT_SF_INFO].#
+[small]#Rfr: https://libsndfile.github.io/libsndfile/command.html#sfc_get_current_sf_info[SFC_GET_CURRENT_SF_INFO].#
 
 Alternatively, the individual <<fileinfo, _fileinfo_>> attributes can be retrieved with the following methods of the _sndfile_ object:
 
@@ -52,10 +52,10 @@ Alternatively, the individual <<fileinfo, _fileinfo_>> attributes can be retriev
 ////
 [[]]
 * **(_sndfile_) +
-[small]#Rfr: http://www.mega-nerd.com/libsndfile/api.html#[sf_].#
+[small]#Rfr: https://libsndfile.github.io/libsndfile/api.html#[sf_].#
 
 [[]]
 * **(_sndfile_) +
-[small]#Rfr: http://www.mega-nerd.com/libsndfile/command.html#SFC_[].#
+[small]#Rfr: https://libsndfile.github.io/libsndfile/command.html#sfc_[].#
 
 ////

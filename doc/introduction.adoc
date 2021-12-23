@@ -12,7 +12,7 @@ As a general rule, libsndfile API *functions* are bound to by MoonSndFile functi
 almost the same names of the original ones, apart from being members of the _sf_ table
 (for example, _sf_open(&nbsp;)_ is bound to by _sf.open(&nbsp;)_).
 
-Libsndfile http://www.mega-nerd.com/libsndfile/command.html[*commands*] are mapped to 
+Libsndfile https://libsndfile.github.io/libsndfile/command.html[*commands*] are mapped to
 functions with names that usually are derived from the 
 command name (e.g. _sf_command(SFC_SET_NORM_FLOAT)_ is mapped to the Lua function
 _sf.set_norm_float(&nbsp;)_).

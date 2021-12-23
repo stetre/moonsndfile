@@ -57,6 +57,25 @@ int command_set_boolean(lua_State *L, int command)
     return 0;
     }
 
+int command_get_integer(lua_State *L, int command)
+    {
+    int val;
+    sndfile_t sndfile = checksndfile(L, 1, NULL);
+    if(sf.command(sndfile, command, &val, sizeof(val)) != 0)
+        return sndfileerror(L, sndfile);
+    lua_pushinteger(L, val);
+    return 1;
+    }
+
+int command_set_integer(lua_State *L, int command)
+    {
+    sndfile_t sndfile = checksndfile(L, 1, NULL);
+    int val = luaL_checkinteger(L, 2);
+    if(sf.command(sndfile, command, &val, sizeof(val)) != SF_TRUE)
+        return sndfileerror(L, sndfile);
+    return 0;
+    }
+
 int command_get_double(lua_State *L, int command)
     {
     double val;
@@ -179,6 +198,12 @@ static int WavexSetAmbisonic(lua_State *L)
     return 0;
     }
 
+static int SetOriginalSamplerate(lua_State *L)
+    { return command_set_integer(L, SFC_SET_ORIGINAL_SAMPLERATE); }
+
+static int GetOriginalSamplerate(lua_State *L)
+    { return command_get_integer(L, SFC_GET_ORIGINAL_SAMPLERATE); }
+
 static const struct luaL_Reg Functions[] = 
     {
 //      { "get_lib_version", GetLibVersion },
@@ -199,9 +224,10 @@ static const struct luaL_Reg Functions[] =
         { "wavex_set_ambisonic", WavexSetAmbisonic },
         { "wavex_get_ambisonic", WavexGetAmbisonic },
 //      { "test_ieee_float_replace", TestIeeeFloatReplace }, not documented in libsndfile @@FARE?
+        { "set_original_samplerate", SetOriginalSamplerate },
+        { "get_original_samplerate", GetOriginalSamplerate },
         { NULL, NULL } /* sentinel */
     };
-
 
 void moonsndfile_open_command(lua_State *L)
     {

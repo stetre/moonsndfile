@@ -13,7 +13,7 @@ _channels_: integer, +
 _frames_: integer, +
 _sections_: integer, +
 _seekable_: boolean, +
-} (Rfr: http://www.mega-nerd.com/libsndfile/api.html#open[SF_INFO]).#
+} (Rfr: https://libsndfile.github.io/libsndfile/api.html#open[SF_INFO]).#
 
 [[formatinfo]]
 [small]#*formatinfo* = { +
@@ -22,21 +22,21 @@ _code_: integer, +
 _name_: string, +
 _extension_: string, +
 _subformats_: {<<subformatinfo, _subformatinfo_>>}, +
-} (Rfr: http://www.mega-nerd.com/libsndfile/command.html#SFC_GET_SIMPLE_FORMAT[SF_FORMAT_INFO]).#
+} (Rfr: https://libsndfile.github.io/libsndfile/command.html#sfc_get_simple_format[SF_FORMAT_INFO]).#
 
 [[subformatinfo]]
 [small]#*subformatinfo* = { +
 _subformat_: <<subformat, _subformat_>>, +
 _code_: integer, +
 _name_: string, +
-} (Rfr: http://www.mega-nerd.com/libsndfile/command.html#SFC_GET_SIMPLE_FORMAT[SF_FORMAT_INFO]).#
+} (Rfr: https://libsndfile.github.io/libsndfile/command.html#sfc_get_simple_format[SF_FORMAT_INFO]).#
 
 [[simpleformat]]
 [small]#*simpleformat* = { +
 _code_: integer, +
 _name_: string, +
 _extension_: string, +
-} (Rfr: http://www.mega-nerd.com/libsndfile/command.html#SFC_GET_SIMPLE_FORMAT[SF_FORMAT_INFO]).#
+} (Rfr: https://libsndfile.github.io/libsndfile/command.html#sfc_get_simple_format[SF_FORMAT_INFO]).#
 
 [[chunk]]
 [small]#*chunk* = { +

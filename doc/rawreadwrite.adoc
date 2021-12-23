@@ -4,29 +4,29 @@
 [[read_raw]]
 * _data_ = *read_raw*(_sndfile_, _bytes_) +
 [small]#Returns the read _data_ as a binary string. +
-Rfr: http://www.mega-nerd.com/libsndfile/api.html#raw[sf_read_raw].#
+Rfr: https://libsndfile.github.io/libsndfile/api.html#raw[sf_read_raw].#
 
 [[write_raw]]
 * _bytes_ = *write_raw*(_sndfile_, _data_) +
 [small]#_data_: binary string (data to write) +
 Returns the number of bytes actually written (may be less than the length of _data_). +
-Rfr: http://www.mega-nerd.com/libsndfile/api.html#raw[sf_write_raw].#
+Rfr: https://libsndfile.github.io/libsndfile/api.html#raw[sf_write_raw].#
 
 [[set_raw_start_offset]]
 * *set_raw_start_offset*(_sndfile_, _bytes_) +
-[small]#Rfr: http://www.mega-nerd.com/libsndfile/command.html#SFC_SET_RAW_START_OFFSET[SFC_SET_RAW_START_OFFSET].#
+[small]#Rfr: https://libsndfile.github.io/libsndfile/command.html#sfc_set_raw_start_offset[SFC_SET_RAW_START_OFFSET].#
 
 [[raw_data_needs_endswap]]
 * _boolean_ = *raw_data_needs_endswap*(_sndfile_) +
-[small]#Rfr: http://www.mega-nerd.com/libsndfile/command.html#SFC_RAW_NEEDS_ENDSWAP[SFC_RAW_DATA_NEEDS_ENDSWAP].#
+[small]#Rfr: https://libsndfile.github.io/libsndfile/command.html#sfc_raw_needs_endswap[SFC_RAW_DATA_NEEDS_ENDSWAP].#
 
 ////
 [[]]
 * **(_sndfile_) +
-[small]#Rfr: http://www.mega-nerd.com/libsndfile/api.html#[sf_].#
+[small]#Rfr: https://libsndfile.github.io/libsndfile/api.html#[sf_].#
 
 [[]]
 * **(_sndfile_) +
-[small]#Rfr: http://www.mega-nerd.com/libsndfile/command.html#SFC_[].#
+[small]#Rfr: https://libsndfile.github.io/libsndfile/command.html#sfc_[].#
 
 ////
